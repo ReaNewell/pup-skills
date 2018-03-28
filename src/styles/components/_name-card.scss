@@ -1,5 +1,7 @@
 .name-card {
     color: white;
     border-bottom: 1px solid darken($green, 15%);
+    display: flex;
+    justify-content: space-between;
     margin: $s-size;
 }

@@ -2,7 +2,7 @@
     border: 1px solid $green;
     display: flex;
     justify-content: space-between;
-    margin: 0 $l-size $xs-size $l-size  ;
+    margin: 0 $xs-size $xs-size $xs-size;
     padding: $m-size $xs-size;
 }
 
@@ -40,7 +40,6 @@
 @media (max-width: $desktop-breakpoint) {
     .skills-form {
         flex-direction: column;
-        margin: 0 $xs-size $xs-size $xs-size;
     }
     .skills-form__text-input, .skills-form__select-input, .skills-form__button {
         margin-bottom: $s-size;

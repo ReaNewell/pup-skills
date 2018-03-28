@@ -1,7 +1,6 @@
 .dashboard-sidebar {
     background: $green;
     border-radius: 1rem;
-    box-shadow: 0px 3px 10px #b9b9b9;
     box-sizing: border-box;
     padding: $xs-size;
     top: 0;
@@ -9,4 +8,20 @@
 }
 .dashboard-sidebar__container {
     margin: 0 $s-size;
+}
+
+
+.bar-slide-appear {
+    opacity: 0
+}
+.bar-slide-appear-active {
+    opacity: 1;
+    transition: 500 ease all;
+}
+
+@media (max-width: $desktop-breakpoint) {
+    .dashboard-sidebar {
+        border-radius: 0;
+        padding: 0;
+    }
 }

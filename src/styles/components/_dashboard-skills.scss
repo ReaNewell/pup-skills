@@ -8,15 +8,15 @@
 }
 
 .dashboard-skills__title {
+    background: $green;
     font-size: $font-size-xlarge;
-    margin: 0;
+    margin: 0 $xs-size $xs-size $xs-size;
     text-align: center;
 }
 
 .dashboard-skills__list-titles {
     background: $green;
     border-radius: 1rem 1rem 0 0;
-    box-shadow: 0px 3px 10px #b9b9b9;
     box-sizing: border-box;
     display: flex;
     justify-content: space-around;
@@ -24,6 +24,16 @@
 }
 
 .dashboard-skills__list-title {
+    box-sizing: border-box;
+    color: white;
+    font-size: 3rem;
+    padding-top: .5rem;
+    text-align: center;
+    width: 50%;
+}
+.dashboard-skills__list-title--inprogress {
+    background: lighten($dark-green, 10%);
+    border-radius: 0 1rem 0 0;
     box-sizing: border-box;
     color: white;
     font-size: 3rem;
@@ -44,10 +54,11 @@
 @media (max-width: $desktop-breakpoint) {
     .dashboard-skills {    
         margin: 0;
-        margin-top: $s-size;
         width: 100vw;
     }
     .dashboard-skills__title {
+        background: none;
         font-size: 2.5rem;
+        margin: 0 0 $xs-size 0;
     }
 }

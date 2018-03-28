@@ -1,6 +1,6 @@
 .skill-card {
     align-items: center;
-    background: lighten($green, 10%);
+    background: #FFFFFF55;
     border-radius: 1rem;
     display: flex;
     justify-content: space-between;
@@ -9,12 +9,11 @@
 }
 
 .skill-card__title {
-    font-size: $l-size;
+    font-size: 2rem;
 }
 
 .skill-card__buttons {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -24,4 +23,25 @@
     border-radius: 1rem;
     color: $dark-green;
     padding: 3px;
+}
+.skill-card__button--inprogress {
+    @extend .skill-card__button;
+
+    border: 3px solid lighten($dark-green, 20%);
+    color: $dark-green;
+}
+
+.skill-fade-enter {
+    opacity: 0;
+}
+.skill-fade-enter-active {
+    opacity: 1;
+    transition: .2s ease-in all
+}
+.skill-fade-leave {
+    opacity: 1;
+}
+.skill-fade-leave-active {
+    opacity: 0;
+    transition: .2s ease-in all
 }

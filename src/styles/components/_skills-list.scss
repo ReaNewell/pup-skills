@@ -1,17 +1,23 @@
 .skills-list {
     background: $green;
     border-radius: 0 0 1rem 1rem;
-    box-shadow: 0px 3px 10px #b9b9b9;
     margin: 0 $xs-size $xs-size $xs-size;
     width: 100%;
 }
+.skills-list--inprogress {
+    @extend .skills-list;
+    background: lighten($dark-green, 10%);
+}
 .skills-list--inactive {
     display: none;
+}
+.skills-list--inprogress {
+    background: lighten($dark-green, 10%);
 }
 
 .skills-list__message {
     background: lighten($green, 10%);
     border-radius: 1rem;
-    margin: $s-size;
+    margin: $xs-size;
     padding: $s-size;
 }

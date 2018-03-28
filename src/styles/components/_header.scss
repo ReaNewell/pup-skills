@@ -33,6 +33,9 @@
 }
 
 @media (max-width: $desktop-breakpoint) {
+    .header {
+        margin-bottom: 0;
+    }
     .header__content {
         padding: $xs-size;
     }
