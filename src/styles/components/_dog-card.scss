@@ -1,0 +1,12 @@
+.dog-card {
+    background: lighten($green, 5%);
+    border-left: 2rem solid lighten($green, 15%);
+    border-radius: 1rem;
+    color: black;
+    margin-bottom: $s-size;
+    padding: $s-size;
+}
+
+.dog-card--active {
+    border-left: 2rem solid lighten($green, 30%);
+}

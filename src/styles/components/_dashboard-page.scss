@@ -1,0 +1,12 @@
+.dashboard-page {
+    background: white;
+    display: flex;
+    margin-bottom: $m-size;
+    max-width: 110rem;
+}
+
+@media (max-width: $desktop-breakpoint) {
+    .dashboard-page {
+        flex-direction: column;
+    }
+}

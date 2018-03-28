@@ -1,0 +1,52 @@
+.skills-form {
+    border: 1px solid $green;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 $l-size $xs-size $l-size  ;
+    padding: $m-size $xs-size;
+}
+
+.skills-form__text-input {
+    border: none;
+    border-bottom: 3px solid $dark-green;
+    font-size: 2rem;
+    padding-left: 5px;
+    width: 30%;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.skills-form__select-input {
+    @extend .skills-form__text-input;
+
+    padding: 0;
+}
+
+.skills-form__button {
+    @extend .skills-form__select-input;
+
+    background: lighten($dark-green, 10%);
+    border: 3px solid $dark-green;
+    color: white;
+    padding: $xs-size;
+}
+
+.skills-form__error {
+    text-align: center;
+}
+
+@media (max-width: $desktop-breakpoint) {
+    .skills-form {
+        flex-direction: column;
+        margin: 0 $xs-size $xs-size $xs-size;
+    }
+    .skills-form__text-input, .skills-form__select-input, .skills-form__button {
+        margin-bottom: $s-size;
+        width: 100%;
+    }
+    .skills-form__button {
+        margin-bottom: 0;
+    }
+}

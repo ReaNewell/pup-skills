@@ -9,6 +9,9 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import { firebase } from'./firebase/firebase';
 import LoadingPage from './components/LoadingPage';
+import { startSetDogs } from './actions/dogs';
+import { startSetProfile } from './actions/profile';
+import { updateProfile } from './actions/profile'
 
 const store = configureStore();
 const jsx = (
@@ -29,10 +32,15 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         store.dispatch(login(user.uid));
-        renderApp();
-        if (history.location.pathname === '/') {
-            history.push('/dashboard');
-        }
+        store.dispatch(startSetProfile()).then(() => {
+            store.dispatch(startSetDogs())
+        })
+        .then(() => {
+            renderApp();
+            if (history.location.pathname === '/') {
+                history.push('/dashboard');
+            }
+        });
     } else {
         store.dispatch(logout());
         renderApp();     

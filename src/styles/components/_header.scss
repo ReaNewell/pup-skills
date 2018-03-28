@@ -1,0 +1,45 @@
+.header {
+    background: $dark-green;
+    margin-bottom: $m-size;
+}
+
+.header__content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: $m-size;
+}
+
+.header__title {
+    color: $light-yellow;
+    font-size: $font-size-xlarge;
+    font-weight: 600;
+    margin: 0;
+    text-decoration: none;
+}
+
+.header__button {
+    background: lighten($green, 15%);
+    border: none;
+    border-radius: 1rem;
+    color: darken($dark-green, 15%);
+    font-size: 2rem;
+    height: 5rem;
+    padding: $xs-size $m-size;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@media (max-width: $desktop-breakpoint) {
+    .header__content {
+        padding: $xs-size;
+    }
+    .header__title {
+        font-size: 3rem;
+    }
+    .header__button {
+        height: auto;
+    }
+}

@@ -1,5 +1,8 @@
 * {
     box-sizing: border-box;
+    font-family: 'Jura', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -7,8 +10,7 @@ html {
 }
 
 body {
-    color: $dark-gray;
-    font-family: Helvetica, Arial, sans-serif;
+    color: #262626;
     font-size: $m-size;
     line-height: 1.6;
 }
@@ -19,6 +21,12 @@ button {
 
 button:disabled {
     cursor: default;
+}
+
+
+.content-container {
+    margin: 0 auto;
+    max-width: 110rem;
 }
 
 .is-active {

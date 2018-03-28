@@ -1,11 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const NameCard = () => (
-    <div>
-        <h2>Hello, User.</h2>
-        <img src="#" />
-        <p>FirstName LastName</p>
+const NameCard = (props) => (
+    <div className="name-card">
+        <h2>Hello, {props.profileName}.</h2>
     </div>
 );
 
-export default NameCard;
+const mapStateToProps = (state) => ({
+    profileName: state.profileInfo.profileName
+})
+
+export default connect(mapStateToProps)(NameCard);

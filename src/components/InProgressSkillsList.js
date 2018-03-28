@@ -1,30 +1,37 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import selectSkills from '../selectors/skillsByCategory';
 
 import SkillCard from './SkillCard';
 
-export const InProgressSkillsList = (props) => (
-    <div>
-        {
-            props.skills.length === 0 ? (
-                <p>There are no in progress skills.</p>
-            ) : (
-                props.skills.map((skill, index) => (
-                    <SkillCard
-                        key = {skill.id}
-                        skill = {skill}
-                    />
-                ))
-            )
-        }
-    </div>
-);
+export class InProgressSkillsList extends React.Component {
+    constructor(props) {
+        super(props)
 
-const mapStateToProps = (state) => {
-    return {
-        skills: selectSkills(state.skills, 'In Progress')
+        this.state = {
+            inProgressSkills: props.activeDog.skills ? selectSkills(props.activeDog.skills, "In Progress") : []
+        }
     }
+    componentWillReceiveProps(nextProps) {
+        this.setState({ inProgressSkills: selectSkills(nextProps.activeDog.skills, "In Progress") });
+    }
+    render() {
+        return (
+            <div className={this.props.listIsActive ? "skills-list" : "skills-list--inactive"}>
+                {   
+                    this.state.inProgressSkills.length === 0 ? (
+                        <p className="skills-list__message">There are no skills in progress.</p>
+                    ) : (
+                        this.state.inProgressSkills.map((skill, index) => (
+                            <SkillCard
+                                key = {skill.id}
+                                skill = {skill}
+                            />
+                        ))
+                    )
+                }
+            </div>
+        )
+    };
 };
 
-export default connect(mapStateToProps)(InProgressSkillsList);
+export default InProgressSkillsList;

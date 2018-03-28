@@ -1,0 +1,14 @@
+.dog-list {
+    margin: $s-size;
+}
+
+.dog-list__button {
+    background: $dark-green;
+    border: none;
+    border-radius: 1rem;
+    box-sizing: none;
+    color: white;
+    margin-top: $s-size;
+    padding: $xs-size;
+    width: 100%;
+}

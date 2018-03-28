@@ -1,0 +1,86 @@
+.dog-form-window {
+    align-items: center;
+    background: #FFFFFF99;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.dog-form {
+    align-items: center;
+    background: $dark-green;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 40rem;
+    justify-content: space-around;
+    position: relative;
+    width: 40rem;
+    z-index: 1;
+}
+
+.dog-form__title {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.dog-form__entry {
+    width: 75%;
+}
+
+.dog-form__label {
+    color: white;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.dog-form__text-input {
+    background: none;
+    border: none;
+    border-bottom: 3px solid darken($dark-green, 15%);
+    color: white;
+    font-size: 3rem;
+    height: 5rem;
+    padding: 0 0 0 0;
+    transition: .3s ease; 
+    width: 100%;
+
+    &:focus {
+        border-bottom: 3px solid lighten($dark-green, 15%);
+        outline: none;
+    }
+}
+
+.dog-form__button {
+    background: lighten($green, 15%);
+    border: none;
+    border-radius: 1rem;
+    color: darken($dark-green, 15%);
+    font-size: 2rem;
+    height: 5rem;
+    width: 50%;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.dog-form__exit {
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    right: $s-size;
+    top: $xs-size;
+    z-index: 2;
+}
+
+@media (max-width: $desktop-breakpoint) {
+    .dog-form {
+        height: 50vh;
+    }
+}

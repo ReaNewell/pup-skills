@@ -1,30 +1,37 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import selectSkills from '../selectors/skillsByCategory';
 
 import SkillCard from './SkillCard';
 
-export const CompletedSkillsList = (props) => (
-    <div>
-        {
-            props.skills.length === 0 ? (
-                <p>There are no completed skills.</p>
-            ) : (
-                props.skills.map((skill, index) => (
-                    <SkillCard
-                        key = {skill.id}
-                        skill = {skill}
-                    />
-                ))
-            )
-        }
-    </div>
-);
+export class CompletedSkillsList extends React.Component {
+    constructor(props) {
+        super(props)
 
-const mapStateToProps = (state) => {
-    return {
-        skills: selectSkills(state.skills, 'Completed')
+        this.state = {
+            completedSkills: props.activeDog.skills ? selectSkills(props.activeDog.skills, "Completed") : []
+        }
+    }
+    componentWillReceiveProps(nextProps) {
+        this.setState({ completedSkills: selectSkills(nextProps.activeDog.skills, "Completed") });
+    }
+    render() {
+        return (
+            <div className={this.props.listIsActive ? "skills-list" : "skills-list--inactive"}>
+                {   
+                    this.state.completedSkills.length === 0 ? (
+                        <p className="skills-list__message">There are no completed skills.</p>
+                    ) : (
+                        this.state.completedSkills.map((skill, index) => (
+                            <SkillCard
+                                key = {skill.id}
+                                skill = {skill}
+                            />
+                        ))
+                    )
+                }
+            </div>
+        )
     }
 };
 
-export default connect(mapStateToProps)(CompletedSkillsList);
+export default CompletedSkillsList;
