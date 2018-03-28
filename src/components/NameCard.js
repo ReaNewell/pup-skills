@@ -25,7 +25,7 @@ class NameCard extends React.Component {
     };
     render() {
         return (
-            <div className="name-card">
+            <div className="name-card" onClick={this.props.toggleBar}>
                 <h2>Hello, {this.props.profileName}.</h2>
                 {(this.state.width < 720 && this.state.activeDog) && <h2>{this.state.activeDog.name}</h2>}
             </div>

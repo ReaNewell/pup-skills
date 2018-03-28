@@ -20,8 +20,8 @@ class MobileDashboardSideBar extends React.Component {
     }
     render() {
         return (
-            <div className="dashboard-sidebar" onClick={this.toggleBar}>
-                <NameCard/>
+            <div className="dashboard-sidebar" >
+                <NameCard toggleBar={this.toggleBar}/>
                 { this.state.barIsOpen && <DogList />}
             </div>
         )

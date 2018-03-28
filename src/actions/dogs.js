@@ -9,9 +9,10 @@ export const activateDog = ( id ) => ({
 
 
 // ADD_DOG
-export const addDog = ({ name, breed = "unknown", isActive = false, skills = []}) => ({
+export const addDog = ({id, name, breed = "unknown", isActive = false, skills = []}) => ({
     type: "ADD_DOG",
     dog: {
+        id,
         name,
         breed,
         isActive,
