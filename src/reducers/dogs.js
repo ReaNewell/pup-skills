@@ -24,6 +24,17 @@ export default (state = defaultDogsReducerState, action) => {
                 }
             });
             return oldState.concat([{ ...action.dog }]);
+        case "EDIT_DOG":
+            return state.map((dog) => {
+                if (dog.id === action.id) {
+                    return {
+                        ...dog,
+                        ...action.updates
+                    }
+                } else {
+                    return dog
+                }
+            });
         case "REMOVE_DOG":
             return state.filter((dog) => dog.id !== action.id);
         case "SET_DOGS":

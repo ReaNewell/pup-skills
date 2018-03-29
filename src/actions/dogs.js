@@ -40,6 +40,24 @@ export const startAddDog = (dogData = {}) => {
 };
 
 
+// EDIT_DOG
+export const editDog = (id, updates) => ({
+    type: "EDIT_DOG",
+    id,
+    updates
+});
+export const startEditDog = (id, updates) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/dogs/${id}`).update({
+            ...updates
+        }).then(() => {
+            dispatch(editDog(id, updates));
+        })
+    }
+};
+
+
 // REMOVE_DOG
 export const removeDog = (id) => ({
     type: "REMOVE_DOG",
