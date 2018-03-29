@@ -21,8 +21,8 @@ export class DogCard extends React.Component {
     };
     render () {
         return (
-            <div onClick={this.activateDog} className={this.props.dog.isActive ? "dog-card dog-card--active" : "dog-card"}>
-                <h3>{this.state.name} knows {this.state.skills} skills.</h3>
+            <div className={this.props.dog.isActive ? "dog-card dog-card--active" : "dog-card"}>
+                <h3 onClick={this.activateDog}>{this.state.name} knows {this.state.skills} skills.</h3>
             </div>
         );
     };

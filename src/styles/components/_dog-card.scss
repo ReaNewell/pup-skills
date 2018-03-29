@@ -1,12 +1,27 @@
 .dog-card {
+    align-items: center;
     background: lighten($green, 5%);
     border-left: 2rem solid lighten($green, 15%);
     border-radius: 1rem;
     color: black;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: $s-size;
     padding: $s-size;
 }
 
 .dog-card--active {
     border-left: 2rem solid lighten($green, 30%);
+}
+
+.dog-card__button {
+    background: lighten($green, 15%);
+    border: none;
+    border-radius: 1rem;
+    color: darken($dark-green, 15%);
+    padding: $xs-size $m-size;
+
+    &:focus {
+        outline: none;
+    }
 }

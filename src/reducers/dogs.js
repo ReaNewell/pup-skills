@@ -24,6 +24,8 @@ export default (state = defaultDogsReducerState, action) => {
                 }
             });
             return oldState.concat([{ ...action.dog }]);
+        case "REMOVE_DOG":
+            return state.filter((dog) => dog.id !== action.id);
         case "SET_DOGS":
             return action.dogs.map((dog) => {
                 let skills = [];

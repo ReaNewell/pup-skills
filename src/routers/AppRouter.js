@@ -6,6 +6,7 @@ import DashboardPage from '../components/DashboardPage';
 import GettingStartedPage from '../components/GettingStartedPage';
 import LoginPage from '../components/LoginPage';
 import NotFoundPage from '../components/NotFoundPage';
+import SettingsPage from '../components/SettingsPage';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -17,6 +18,7 @@ const AppRouter = () => (
             <Switch>
                 <PublicRoute path="/" component={LoginPage} exact={true}/>
                 <PrivateRoute path="/dashboard" component={DashboardPage} />
+                <PrivateRoute path="/settings" component={SettingsPage} />
                 <PrivateRoute path="/getting-started" component={GettingStartedPage}/>
                 <Route component={NotFoundPage}/>
             </Switch>
