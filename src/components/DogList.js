@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import DogCard from './DogCard';
 import DogForm from './DogForm';
@@ -41,6 +42,9 @@ class DogList extends React.Component {
                     this.state.dogCount < 3 && <button onClick={this.openModal} className="dog-list__button">Add Dog</button>
                 }
                 { this.state.modalOpen && <DogForm closeModal={this.closeModal}/>}
+                <div className="dog-list__button">
+                    <Link to='/settings'>Edit Profile</Link>
+                </div>
             </div>
         )
     }

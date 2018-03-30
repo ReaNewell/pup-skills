@@ -69,58 +69,59 @@ class SettingsPage extends React.Component {
     }
     openEditDogModal = (e) => {
         const dog = this.props.dogs.filter(dog => dog.id === e.target.value)[0];
-        console.log(dog);
         this.setState(() => ({ editDogModal: true }));
         this.setState(() => ({ currentDog: dog }));
     }
 
     render() {
         return (
-            <div className="content-container">
-                <h1>Edit Profile</h1>
+            <div className="content-container settings-page">
+                <h1 className="settings-page__title">Edit Profile</h1>
                 <div className="settings-page__board">
-                    <h3>Profile Settings</h3>
+                    <h3 className="settings-page__subtitle">Profile Settings</h3>
                     { this.state.updatingProfileName ? (
-                        <form onSubmit={this.updateProfileName}>
-                            <p>Profile Name: <input type="text" value={this.state.profileName} onChange={this.profileNameOnChange}/></p>
-                            <button>Update Name</button>
+                        <form onSubmit={this.updateProfileName} className="settings-page__board__tile">
+                            <p>Profile Name: <input type="text" value={this.state.profileName} onChange={this.profileNameOnChange} className="settings-page__text-input"/></p>
+                            <button className="settings-page__button">Update Name</button>
                         </form>
                     ) : (
-                        <div>
+                        <div className="settings-page__board__tile">
                             <p>Profile Name: {this.state.profileName}</p>
-                            <button onClick={this.openUpdateProfileName}>Edit Profile Name</button>
+                            <button onClick={this.openUpdateProfileName} className="settings-page__button">Edit Profile Name</button>
                         </div>
                     ) }
-                    <h3>Pups Settings</h3>
+                    <h3 className="settings-page__subtitle">Pups Settings</h3>
                     <div>
                         {this.props.dogs.length === 0 ? (
                             <p>There are no dogs.</p>
                         ) : (
                             this.props.dogs.map((dog) => (
-                                <div key={dog.id}>
+                                <div key={dog.id} className="settings-page__board__tile">
                                     <div>
                                         <p>Name: {dog.name}</p>
                                         <p>Breed: {dog.breed}</p>
                                     </div>
-                                    <div>
-                                        <button onClick={this.openEditDogModal} value={dog.id}>Edit Dog</button>
-                                        <button onClick={this.openRemoveDogWarningModal} value={dog.id}>Remove Dog</button>
+                                    <div className="settings-page__button-group">
+                                        <button onClick={this.openEditDogModal} value={dog.id} className="settings-page__button">Edit Dog</button>
+                                        <button onClick={this.openRemoveDogWarningModal} value={dog.id} className="settings-page__button">Remove</button>
                                     </div>
                                 </div>
                             ))
                         )}
                     </div>
-                    <div>
-                        <button onClick={this.openRemoveProfileWarningModal}>Delete Account</button>
+                    <h3 className="settings-page__subtitle">Delete Account</h3>
+                    <div className="settings-page__board__tile">
+                        <p>Permanently delete account</p>
+                        <button onClick={this.openRemoveProfileWarningModal} className="settings-page__button" >Delete Account</button>
                     </div>
                 </div>
                 { this.state.removeDogWarning && 
-                    <div>
-                        <div>
-                            <h2>Are you sure you want to delete your dog and associated skills?</h2>
+                    <div className="warning-modal__container">
+                        <div className="warning-modal">
+                            <h2 className="warning-modal__message">Are you sure you want to delete your dog and associated skills?</h2>
                             <div>
-                                <button onClick={this.removeDog}>Yes, I'm sure.</button>
-                                <button onClick={this.closeRemoveDogWarningModal}>No, nevermind.</button>
+                                <button onClick={this.removeDog} className="settings-page__button--warning">Yes, I'm sure.</button>
+                                <button onClick={this.closeRemoveDogWarningModal} className="settings-page__button--warning">No, nevermind.</button>
                             </div>
                         </div>
                     </div>
@@ -129,18 +130,18 @@ class SettingsPage extends React.Component {
                     <EditDogForm dog={this.state.currentDog} closeEditDogModal={this.closeEditDogModal}/>
                 }
                 { this.state.removeProfileWarning &&
-                    <div>
-                    <div>
-                        <h2>
-                            Are you sure you want to delete your profile and account information?
-                            This data cannot be restored.
-                        </h2>
-                        <div>
-                            <button onClick={this.removeProfile}>Yes, I'm sure.</button>
-                            <button onClick={this.closeRemoveProfileWarningModal}>No, nevermind.</button>
+                    <div className="warning-modal__container">
+                        <div className="warning-modal">
+                            <h2 className="warning-modal__message">
+                                Are you sure you want to delete your profile and account information?
+                                This data cannot be restored.
+                            </h2>
+                            <div>
+                                <button onClick={this.removeProfile} className="settings-page__button--warning">Yes, I'm sure.</button>
+                                <button onClick={this.closeRemoveProfileWarningModal} className="settings-page__button--warning">No, nevermind.</button>
+                            </div>
                         </div>
                     </div>
-                </div>
                 }
             </div>
         )
