@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { startRemoveDog } from '../actions/dogs';
-import { startUpdateProfile } from '../actions/profile';
+import { startUpdateProfile, startRemoveProfile } from '../actions/profile';
 import EditDogForm from './EditDogForm';
 
 class SettingsPage extends React.Component {
@@ -14,6 +14,7 @@ class SettingsPage extends React.Component {
             currentDogId: "",
             profileName: props.profileName,
             removeDogWarning: false,
+            removeProfileWarning: false,
             editDogModal: false,
             updatingProfileName: false
         }
@@ -22,8 +23,11 @@ class SettingsPage extends React.Component {
         this.setState(() => ({ profileName: nextProps.profileName }));
     }
     removeDog = () => {
-        this.props.startRemoveDog(this.state.currentDog)
+        this.props.startRemoveDog(this.state.currentDogId)
         this.closeRemoveDogWarningModal();
+    }
+    removeProfile = () => {
+        this.props.startRemoveProfile();
     }
     profileNameOnChange = (e) => {
         const profileName = e.target.value;
@@ -52,6 +56,13 @@ class SettingsPage extends React.Component {
         this.setState(() => ({ removeDogWarning: true }));
         this.setState(() => ({ currentDogId: id }));
     }
+    closeRemoveProfileWarningModal = () => {
+        this.setState(() => ({ removeProfileWarning: false }))
+    }
+    openRemoveProfileWarningModal = () => {
+        this.setState(() => ({ removeProfileWarning: true }));
+    }
+
     closeEditDogModal = () => {
         this.setState(() => ({ currentDog: {} }))
         this.setState(() => ({ editDogModal: false }))
@@ -99,6 +110,9 @@ class SettingsPage extends React.Component {
                             ))
                         )}
                     </div>
+                    <div>
+                        <button onClick={this.openRemoveProfileWarningModal}>Delete Account</button>
+                    </div>
                 </div>
                 { this.state.removeDogWarning && 
                     <div>
@@ -114,6 +128,20 @@ class SettingsPage extends React.Component {
                 { this.state.editDogModal &&
                     <EditDogForm dog={this.state.currentDog} closeEditDogModal={this.closeEditDogModal}/>
                 }
+                { this.state.removeProfileWarning &&
+                    <div>
+                    <div>
+                        <h2>
+                            Are you sure you want to delete your profile and account information?
+                            This data cannot be restored.
+                        </h2>
+                        <div>
+                            <button onClick={this.removeProfile}>Yes, I'm sure.</button>
+                            <button onClick={this.closeRemoveProfileWarningModal}>No, nevermind.</button>
+                        </div>
+                    </div>
+                </div>
+                }
             </div>
         )
     }
@@ -126,6 +154,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     startRemoveDog: (data) => dispatch(startRemoveDog(data)),
+    startRemoveProfile: () => dispatch(startRemoveProfile()),
     startUpdateProfile: (data) => dispatch(startUpdateProfile(data))
 });
 

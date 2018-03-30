@@ -1,4 +1,16 @@
 import database from '../firebase/firebase';
+import { startLogout } from './auth';
+
+// REMOVE_PROFILE
+export const startRemoveProfile = () => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}`).remove().then(() => {
+            dispatch(startLogout());
+        })
+    }
+}
+
 
 // UPDATE_PROFILE
 export const updateProfile = (profileInfo) => ({
