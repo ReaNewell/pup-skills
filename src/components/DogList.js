@@ -42,9 +42,10 @@ class DogList extends React.Component {
                     this.state.dogCount < 3 && <button onClick={this.openModal} className="dog-list__button">Add Dog</button>
                 }
                 { this.state.modalOpen && <DogForm closeModal={this.closeModal}/>}
-                <div className="dog-list__button">
-                    <Link to='/settings'>Edit Profile</Link>
-                </div>
+                <Link to='/settings'>
+                    <div className="dog-list__button">Edit Profile</div>
+                </Link>
+                
             </div>
         )
     }

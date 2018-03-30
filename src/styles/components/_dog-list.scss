@@ -1,5 +1,17 @@
 .dog-list {
     margin: $s-size;
+
+    a {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        &:visited {
+            color: white;
+        }
+    }
 }
 
 .dog-list__button {
@@ -15,16 +27,4 @@
     padding: $xs-size;
     text-align: center;
     width: 100%;
-
-    a {
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        padding: 0;
-        text-align: center;
-        text-decoration: none;
-        width: 100%;
-        &:visited {
-            color: white;
-        }
-    }
 }

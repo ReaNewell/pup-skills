@@ -66,14 +66,14 @@ class SkillsForm extends React.Component {
                         type="text"
                         value={this.state.name}
                     />
-                    <select
-                        className="skills-form__select-input"
-                        onChange={this.onCategoryChange}
-                        value={this.state.category}
-                    >
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div className="skills-form__select-input">
+                        <div>
+                            <input type="radio" name="category-input" value="In Progress"/><label>In Progress</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="category-input" value="Completed"/><label>Completed</label>
+                        </div>
+                    </div>
                     <button className="skills-form__button">Add Skill</button>
                 </div>
             </form>
