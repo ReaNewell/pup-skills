@@ -34,6 +34,7 @@ class DogList extends React.Component {
                             <DogCard 
                                 key = {index}
                                 dog = {dog}
+                                toggleBar = {this.props.toggleBar}
                             />
                         ))
                     )

@@ -1,11 +1,15 @@
 .skill-card {
     align-items: center;
     background: #FFFFFF55;
-    border-radius: 1rem;
+    border-bottom: 1px solid #CCCCCC;
     display: flex;
     justify-content: space-between;
     margin: $xs-size;
     padding: $xs-size;
+
+    &:last-child {
+        border: none;
+    }
 }
 
 .skill-card__title {
@@ -19,15 +23,13 @@
 
 .skill-card__button {
     background: white;
-    border: 3px solid lighten($green, 10%);
-    border-radius: 1rem;
+    border: none;
     color: $dark-green;
-    padding: 3px;
+    padding: .5rem;
 }
 .skill-card__button--inprogress {
     @extend .skill-card__button;
 
-    border: 3px solid lighten($dark-green, 20%);
     color: $dark-green;
 }
 
