@@ -40,6 +40,7 @@ class SkillsForm extends React.Component {
                 }
             }
             if (!errorOccured) {
+                document.getElementById('in-progress').checked = true;
                 this.setState(() => ({ error: "" }));
                 const skill = {
                     dogId: this.state.activeDog.id,
@@ -68,10 +69,10 @@ class SkillsForm extends React.Component {
                     />
                     <div className="skills-form__select-input">
                         <div>
-                            <input type="radio" name="category-input" value="In Progress"/><label>In Progress</label>
+                            <input type="radio" name="category-input" value="In Progress" id="in-progress" defaultChecked onClick={this.onCategoryChange}/><label htmlFor="in-progress">In Progress</label>
                         </div>
                         <div>
-                            <input type="radio" name="category-input" value="Completed"/><label>Completed</label>
+                            <input type="radio" name="category-input" value="Completed" id="completed" onClick={this.onCategoryChange}/><label htmlFor="completed">Completed</label>
                         </div>
                     </div>
                     <button className="skills-form__button">Add Skill</button>
