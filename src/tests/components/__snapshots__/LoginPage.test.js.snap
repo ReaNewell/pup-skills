@@ -2,21 +2,18 @@
 
 exports[`should render login page correctly 1`] = `
 <div
-  className="box-layout"
+  className="login-page"
 >
   <div
-    className="box-layout__box"
+    className="login-page__box"
   >
-    <h1
-      className="box-layout__title"
+    <h2
+      className="login-page__title"
     >
-      Boilerplate
-    </h1>
-    <p>
-      Tag line for app.
-    </p>
+      Pup Skills
+    </h2>
     <button
-      className="button"
+      className="login-page__button"
     >
       Login with Google
     </button>

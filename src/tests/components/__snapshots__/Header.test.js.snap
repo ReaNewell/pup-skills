@@ -15,12 +15,14 @@ exports[`should render header correctly 1`] = `
         replace={false}
         to="/dashboard"
       >
-        <h1>
+        <h1
+          className="header__title"
+        >
           Pup Skills
         </h1>
       </Link>
       <button
-        className="button button--link"
+        className="header__button"
         onClick={[Function]}
       >
         Logout
