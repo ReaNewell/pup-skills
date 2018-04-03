@@ -17,12 +17,14 @@ export default (state = defaultDogsReducerState, action) => {
                 }
             });
         case "ADD_DOG":
+            // Creates an array of the old state objects, mutates each dog to be inactive.
             const oldState = state.map((dog) => { 
                 return { 
                     ...dog, 
                     isActive: false 
                 }
             });
+            // Adds dog to old state, new dog is active.
             return oldState.concat([{ ...action.dog }]);
         case "EDIT_DOG":
             return state.map((dog) => {
@@ -54,12 +56,14 @@ export default (state = defaultDogsReducerState, action) => {
 
         case 'ADD_SKILL':
             return state.map((dog) => {
+                // Sets up skills array for current dog.
                 let skills = [];
                 if (dog.skills) {
                     for (let i=0; i<dog.skills.length; i++) {
                         skills[i] = dog.skills[i];
                     }
                 }
+                // Adds skill to active dog's skill array.
                 return dog.id === action.skill.dogId ? (
                     {
                         ...dog,
@@ -73,12 +77,10 @@ export default (state = defaultDogsReducerState, action) => {
                 )
             });
         case 'CHANGE_CATEGORY':
+            // Sets new category based on old category.
             let newCategory = '';
-            if (action.category === 'In Progress') {
-                newCategory = 'Completed';
-            } else {
-                newCategory = 'In Progress'
-            }
+            action.category === 'In Progress' ? newCategory = 'Completed' : newCategory = 'In Progress';
+            // Sets category property of skill to the new category.
             return state.map((dog) => {
                 if (dog.id === action.dogId) {
                     return {

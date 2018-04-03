@@ -22,12 +22,14 @@ class SettingsPage extends React.Component {
     componentWillReceiveProps(nextProps) {
         this.setState(() => ({ profileName: nextProps.profileName }));
     }
+    removeProfile = () => {
+        this.props.startRemoveProfile();
+    }
+
+    // UPDATING STATE
     removeDog = () => {
         this.props.startRemoveDog(this.state.currentDogId)
         this.closeRemoveDogWarningModal();
-    }
-    removeProfile = () => {
-        this.props.startRemoveProfile();
     }
     profileNameOnChange = (e) => {
         const profileName = e.target.value;

@@ -25,6 +25,7 @@ class SkillsForm extends React.Component {
         const name = e.target.value;
         this.setState(() => ({ name }));
     };
+    // Adds skills object to the active dog's skill array in Firebase.
     onSubmit = (e) => {
         e.preventDefault();
 

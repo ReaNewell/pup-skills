@@ -15,6 +15,7 @@ class GettingStartedPage extends React.Component {
         const profileName = e.target.value;
         this.setState(() => ({ profileName }))
     }
+    // Updates profile information, then sends user to the dashboard.
     onSubmit = (e) => {
         e.preventDefault();
         

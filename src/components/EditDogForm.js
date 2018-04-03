@@ -21,6 +21,7 @@ class EditDogForm extends React.Component {
         const name = e.target.value;
         this.setState(() => ({ name }));
     };
+    // Edits dog object to dogs array in Firebase, then closes the modal form.
     onSubmit = (e) => {
         e.preventDefault();
 
