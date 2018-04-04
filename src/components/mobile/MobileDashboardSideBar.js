@@ -11,6 +11,7 @@ class MobileDashboardSideBar extends React.Component {
             barIsOpen: false
         }
     }
+    // Passed down to the Dog List, then passed to each Dog Card.
     toggleBar = () => {
         this.state.barIsOpen ? (
             this.setState(() => ({ barIsOpen: false }))
