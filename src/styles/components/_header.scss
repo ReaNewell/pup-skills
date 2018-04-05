@@ -23,7 +23,7 @@
     border: none;
     border-radius: 1rem;
     color: darken($dark-green, 15%);
-    font-size: 2rem;
+    font-size: $font-size-medium;
     height: 5rem;
     padding: $xs-size $m-size;
 
@@ -40,7 +40,7 @@
         padding: $xs-size;
     }
     .header__title {
-        font-size: 3rem;
+        font-size: $font-size-large;
     }
     .header__button {
         height: auto;
