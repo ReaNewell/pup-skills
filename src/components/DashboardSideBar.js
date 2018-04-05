@@ -1,5 +1,4 @@
 import React from 'react';
-
 import DogList from './DogList';
 import NameCard from './NameCard';
 

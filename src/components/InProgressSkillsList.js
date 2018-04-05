@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import selectSkills from '../selectors/skillsByCategory';
-
 import SkillCard from './SkillCard';
 
 export class InProgressSkillsList extends React.Component {
@@ -10,11 +9,11 @@ export class InProgressSkillsList extends React.Component {
 
         this.state = {
             inProgressSkills: props.activeDog.skills ? selectSkills(props.activeDog.skills, "In Progress") : []
-        }
-    }
+        };
+    };
     componentWillReceiveProps(nextProps) {
         this.setState({ inProgressSkills: selectSkills(nextProps.activeDog.skills, "In Progress") });
-    }
+    };
     render() {
         const transition = {
             transitionName: "skill-fade",

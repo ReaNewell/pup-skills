@@ -12,10 +12,10 @@ export class DogCard extends React.Component {
             name: props.dog.name,
             skills: selectSkills(props.dog.skills, "Completed").length
         }
-    }
+    };
     componentWillReceiveProps(nextProps) {
         this.setState({ skills: selectSkills(nextProps.dog.skills, "Completed").length });  
-    }
+    };
     // Deactivates all dogs, activates Dog Card that is clicked.
     activateDog = () => {
         this.props.activateDog(this.state.id);

@@ -24,8 +24,18 @@ export class SkillCard extends React.Component {
             <div className="skill-card">
                 <h3 className="skill-card__title">{this.state.name}</h3>
                 <div className="skill-card__buttons">
-                    <button onClick={this.startChangeCategory} className={this.state.category === "Completed" ? "skill-card__button" : "skill-card__button--inprogress"}>Move</button>
-                    <button onClick={this.startRemoveSkill} className={this.state.category === "Completed" ? "skill-card__button" : "skill-card__button--inprogress"}>Delete</button>
+                    <button 
+                        onClick={this.startChangeCategory} 
+                        className={this.state.category === "Completed" ? "skill-card__button" : "skill-card__button--inprogress"}
+                    >
+                        Move
+                    </button>
+                    <button 
+                        onClick={this.startRemoveSkill} 
+                        className={this.state.category === "Completed" ? "skill-card__button" : "skill-card__button--inprogress"}
+                    >
+                        Delete
+                    </button>
                 </div>
             </div>
         );

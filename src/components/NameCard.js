@@ -13,13 +13,13 @@ class NameCard extends React.Component {
     }
     componentWillReceiveProps(nextProps) {
         this.setState({ activeDog: nextProps.activeDog });
-    }
+    };
     componentWillMount() {
         window.addEventListener('resize', this.handleWindowSizeChange);
-    }
+    };
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleWindowSizeChange);
-      }
+    };
     handleWindowSizeChange = () => {
         this.setState({ width: window.innerWidth });
     };
@@ -37,5 +37,4 @@ const mapStateToProps = (state) => ({
     profileName: state.profileInfo.profileName,
     activeDog: activeDogSelector(state.dogs)
 })
-
 export default connect(mapStateToProps)(NameCard);

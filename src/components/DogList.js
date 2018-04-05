@@ -13,16 +13,16 @@ class DogList extends React.Component {
             modalOpen: false,
             dogCount: props.dogs.length
         }
-    }
+    };
     componentWillReceiveProps(nextProps) {
-        this.setState(() => ({ dogCount: nextProps.dogs.length }))
-    }
+        this.setState(() => ({ dogCount: nextProps.dogs.length }));
+    };
     closeModal = () => {
         this.setState(() => ({ modalOpen: false }));
-    }
+    };
     openModal = () => {
         this.setState(() => ({ modalOpen: true }));
-    }
+    };
     render() {
         return (
             <div className="dog-list">
@@ -55,5 +55,4 @@ class DogList extends React.Component {
 const mapStateToProps = (state) => ({
     dogs: state.dogs
 });
-
 export default connect(mapStateToProps)(DogList);

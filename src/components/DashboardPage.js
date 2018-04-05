@@ -13,16 +13,16 @@ class DashboardPage extends React.Component {
         this.state = {
             width: window.innerWidth
         }
-    }
+    };
     componentWillMount() {
         window.addEventListener('resize', this.handleWindowSizeChange);
         if (!this.props.hasProfileName) {
             this.props.history.push('/getting-started');
         }
-    }
+    };
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleWindowSizeChange);
-      }
+    };
     handleWindowSizeChange = () => {
         this.setState({ width: window.innerWidth });
     };
@@ -38,10 +38,5 @@ class DashboardPage extends React.Component {
 
 const mapStateToProps = (state) => ({
     hasProfileName: !!state.profileInfo.profileName
-})
-
-const mapDispatchToProps = (dispatch) => ({
-    
 });
-
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardPage);
+export default connect(mapStateToProps)(DashboardPage);

@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import { startAddDog } from '../actions/dogs';
 
 class DogForm extends React.Component {
@@ -74,5 +73,4 @@ class DogForm extends React.Component {
 const mapDispatchToProps = (dispatch) => ({
     startAddDog: (dog) => dispatch(startAddDog(dog))
 });
-
 export default connect(undefined, mapDispatchToProps)(DogForm);

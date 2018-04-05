@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import { startUpdateProfile } from '../actions/profile';
 
 class GettingStartedPage extends React.Component {
@@ -14,7 +13,7 @@ class GettingStartedPage extends React.Component {
     onNameChange = (e) => {
         const profileName = e.target.value;
         this.setState(() => ({ profileName }))
-    }
+    };
     // Updates profile information, then sends user to the dashboard.
     onSubmit = (e) => {
         e.preventDefault();
@@ -24,12 +23,12 @@ class GettingStartedPage extends React.Component {
         }
         this.props.startUpdateProfile(profileInfo);
         this.props.history.push('/dashboard');
-    }
+    };
     componentWillMount() {
         if (this.props.hasProfileName) {
             this.props.history.push('/dashboard');
         }
-    }
+    };
     render() {
         return (
             <div className="getting-started">
@@ -51,10 +50,8 @@ class GettingStartedPage extends React.Component {
 
 const mapStateToProps = (state) => ({
     hasProfileName : state.profileInfo.profileName
-})
-
+});
 const mapDispatchToProps = (dispatch) => ({
     startUpdateProfile: (profileInfo) => dispatch(startUpdateProfile(profileInfo))
 });
-
 export default connect(mapStateToProps, mapDispatchToProps)(GettingStartedPage);

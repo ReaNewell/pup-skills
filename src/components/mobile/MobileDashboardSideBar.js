@@ -1,16 +1,15 @@
 import React from 'react';
-
 import DogList from '../DogList';
 import NameCard from '../NameCard';
 
-class MobileDashboardSideBar extends React.Component {
+export default class MobileDashboardSideBar extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             barIsOpen: false
         }
-    }
+    };
     // Passed down to the Dog List, then passed to each Dog Card.
     toggleBar = () => {
         this.state.barIsOpen ? (
@@ -18,7 +17,7 @@ class MobileDashboardSideBar extends React.Component {
         ) : (
             this.setState(() => ({ barIsOpen: true }))
         )
-    }
+    };
     render() {
         return (
             <div className="dashboard-sidebar" >
@@ -28,5 +27,3 @@ class MobileDashboardSideBar extends React.Component {
         )
     };
 };
-
-export default MobileDashboardSideBar;

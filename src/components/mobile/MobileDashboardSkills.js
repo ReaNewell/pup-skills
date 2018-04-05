@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import activeDogSelector from '../../selectors/activeDog';
-
 import CompletedSkillsList from '../CompletedSkillsList';
 import InProgressSkillsList from '../InProgressSkillsList';
 import SkillCard from '../SkillCard';
@@ -16,17 +15,17 @@ class MobileDashboardSkills extends React.Component {
             activeDog: props.activeDog,
             completedListIsActive: true
         }
-    }
+    };
     componentWillReceiveProps(nextProps) {
         this.setState({ dogs: nextProps.dogs, });
         this.setState({ activeDog: nextProps.activeDog });
-    }
+    };
     activateCompletedList = () => {
         this.setState(() => ({ completedListIsActive: true }));
-    }
+    };
     activateInProgressList = () => {
         this.setState(() => ({ completedListIsActive: false }));
-    }
+    };
     render() {
         return (
             <div className="dashboard-skills">
@@ -56,5 +55,4 @@ const mapStateToProps = (state) => {
         activeDog: activeDogSelector(state.dogs)
     };
 };
-
 export default connect(mapStateToProps)(MobileDashboardSkills);

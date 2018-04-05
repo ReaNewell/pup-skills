@@ -5,17 +5,17 @@ import selectSkills from '../selectors/skillsByCategory';
 
 import SkillCard from './SkillCard';
 
-export class CompletedSkillsList extends React.Component {
+export default class CompletedSkillsList extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
             completedSkills: props.activeDog.skills ? selectSkills(props.activeDog.skills, "Completed") : []
-        }
-    }
+        };
+    };
     componentWillReceiveProps(nextProps) {
         this.setState({ completedSkills: selectSkills(nextProps.activeDog.skills, "Completed") });
-    }
+    };
     render() {
         const transition = {
             transitionName: "skill-fade",
@@ -44,5 +44,3 @@ export class CompletedSkillsList extends React.Component {
         )
     }
 };
-
-export default CompletedSkillsList;

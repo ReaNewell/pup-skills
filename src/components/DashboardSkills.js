@@ -20,13 +20,13 @@ class DashboardSkills extends React.Component {
     componentWillReceiveProps(nextProps) {
         this.setState({ dogs: nextProps.dogs, });
         this.setState({ activeDog: nextProps.activeDog });
-    }
+    };
     activateCompletedList = () => {
         this.setState(() => ({ completedListIsActive: true }));
-    }
+    };
     activateInProgressList = () => {
         this.setState(() => ({ completedListIsActive: false }));
-    }
+    };
     render() {
         return (
             <div className="dashboard-skills">
@@ -36,8 +36,18 @@ class DashboardSkills extends React.Component {
                         <h1 className="dashboard-skills__title">Here are {this.state.activeDog.name}'s skills</h1>
                         <SkillsForm activeDog={this.state.activeDog}/>
                         <div className="dashboard-skills__list-titles">
-                            <p className={this.state.completedListIsActive ? "dashboard-skills__list-title dashboard-skills__list-title--active" : "dashboard-skills__list-title"} onClick={this.activateCompletedList}>Completed</p>
-                            <p className={this.state.completedListIsActive ? "dashboard-skills__list-title--inprogress " : "dashboard-skills__list-title--inprogress dashboard-skills__list-title--active"} onClick={this.activateInProgressList}>In Progress</p>
+                            <p 
+                                className={this.state.completedListIsActive ? "dashboard-skills__list-title dashboard-skills__list-title--active" : "dashboard-skills__list-title"} 
+                                onClick={this.activateCompletedList}
+                            >
+                                Completed
+                            </p>
+                            <p 
+                                className={this.state.completedListIsActive ? "dashboard-skills__list-title--inprogress " : "dashboard-skills__list-title--inprogress dashboard-skills__list-title--active"} 
+                                onClick={this.activateInProgressList}
+                            >
+                                In Progress
+                            </p>
                         </div>
                         <div className="dashboard-skills__lists">
                             <CompletedSkillsList listIsActive={this.state.completedListIsActive} activeDog={this.state.activeDog}/>
@@ -56,5 +66,4 @@ const mapStateToProps = (state) => {
         activeDog: activeDogSelector(state.dogs)
     };
 };
-
 export default connect(mapStateToProps)(DashboardSkills);
