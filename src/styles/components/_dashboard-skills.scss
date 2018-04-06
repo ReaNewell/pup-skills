@@ -9,57 +9,25 @@
     width: 100%;
 }
 
+.dashboard-skills__header {
+    align-items: center;
+    border-bottom: 3px solid $dark-green;
+    display: flex;
+    margin: 0 $xs-size $m-size $xs-size;
+}
 .dashboard-skills__title {
-    background: $dark-green;
-    color: $light-yellow;
+    color: $dark-green;
+    flex: 3;
     font-size: $font-size-large;
-    margin: 0 $xs-size $s-size $xs-size;
     text-align: center;
 }
-
-.dashboard-skills__list-titles {
-    background: $green;
-    border-radius: 1rem 1rem 0 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-around;
-    margin: $m-size $xs-size 0 $xs-size;
-}
-
-.dashboard-skills__list-title {
-    box-sizing: border-box;
-    color: white;
-    font-size: $font-size-large;
-    padding-top: .5rem;
-    text-align: center;
-    width: 50%;
-}
-.dashboard-skills__list-title--inprogress {
-    background: lighten($dark-green, 10%);
-    border-radius: 0 1rem 0 0;
-    box-sizing: border-box;
-    color: white;
-    font-size: $font-size-large;
-    padding-top: .5rem;
-    text-align: center;
-    width: 50%;
-}
-.dashboard-skills__list-title--active {
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-.dashboard-skills__lists {
-    display: flex;
-    width: 100%;
-}
-
 .dashboard-skills__button {
     background: lighten($green, 15%);
     border: none;
     border-radius: 1rem;
     box-sizing: border-box;
     color: darken($dark-green, 15%);
+    flex: 1;
     font-size: $font-size-medium;
     height: 5rem;
     padding: $xs-size $m-size;
@@ -70,9 +38,58 @@
     }
 }
 
+.dashboard-skills__list-titles {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    margin: $m-size 0 0 0;
+}
+
+.dashboard-skills__list-title {
+    background: $green;
+    box-sizing: border-box;
+    color: white;
+    font-size: $font-size-large;
+    padding: 0 0 1rem 0;
+    text-align: center;
+    width: 100%;
+}
+.dashboard-skills__list-title--inprogress {
+    background: lighten($dark-green, 10%);
+    box-sizing: border-box;
+    color: white;
+    font-size: $font-size-large; 
+    padding: 0 0 1rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.dashboard-skills__list-title--active {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.dashboard-skills__lists {
+    display: flex;
+    width: 100%;
+}
+
 @media (max-width: $desktop-breakpoint) {
     .dashboard-skills {    
         margin: 0;
         width: 100vw;
+    }
+    .dashboard-skills__list-title {
+        border: 1rem solid $green;
+        border-radius: 1rem 1rem 0 0;
+        margin: 0  $xs-size;
+        padding: .5rem 0 0 0;
+        width: 50%;
+    }
+    .dashboard-skills__list-title--inprogress {
+        border-radius: 1rem 1rem 0 0;
+        margin: 0 $xs-size; 
+        padding: .5rem 0 0 0;
+        width: 50%;
     }
 }

@@ -22,12 +22,6 @@ class DashboardSkills extends React.Component {
         this.setState({ dogs: nextProps.dogs, });
         this.setState({ activeDog: nextProps.activeDog });
     };
-    activateCompletedList = () => {
-        this.setState(() => ({ completedListIsActive: true }));
-    };
-    activateInProgressList = () => {
-        this.setState(() => ({ completedListIsActive: false }));
-    };
 
     openSkillModal = () => {
         this.setState(() => ({ skillModalOpen: true }));
@@ -41,26 +35,14 @@ class DashboardSkills extends React.Component {
                 {
                     this.state.activeDog && 
                     <div className="dashboard-skills__container">
-                        <h1 className="dashboard-skills__title">Here are {this.state.activeDog.name}'s skills</h1>
-                        <button className="dashboard-skills__button" onClick={this.openSkillModal}>Add Skill</button>
-                        {this.state.skillModalOpen && <SkillsForm closeSkillModal={this.closeSkillModal} activeDog={this.state.activeDog}/>}
-                        <div className="dashboard-skills__list-titles">
-                            <p 
-                                className={this.state.completedListIsActive ? "dashboard-skills__list-title dashboard-skills__list-title--active" : "dashboard-skills__list-title"} 
-                                onClick={this.activateCompletedList}
-                            >
-                                Completed
-                            </p>
-                            <p 
-                                className={this.state.completedListIsActive ? "dashboard-skills__list-title--inprogress " : "dashboard-skills__list-title--inprogress dashboard-skills__list-title--active"} 
-                                onClick={this.activateInProgressList}
-                            >
-                                In Progress
-                            </p>
+                        <div className="dashboard-skills__header">
+                            <h1 className="dashboard-skills__title">Here are {this.state.activeDog.name}'s skills</h1>
+                            <button className="dashboard-skills__button" onClick={this.openSkillModal}>Add Skill</button>
                         </div>
+                        {this.state.skillModalOpen && <SkillsForm closeSkillModal={this.closeSkillModal} activeDog={this.state.activeDog}/>}
                         <div className="dashboard-skills__lists">
                             <CompletedSkillsList listIsActive={this.state.completedListIsActive} activeDog={this.state.activeDog}/>
-                            <InProgressSkillsList listIsActive={!this.state.completedListIsActive} activeDog={this.state.activeDog}/>
+                            <InProgressSkillsList listIsActive={this.state.completedListIsActive} activeDog={this.state.activeDog}/>
                         </div>
                     </div>
                 }

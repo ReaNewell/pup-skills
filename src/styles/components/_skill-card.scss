@@ -4,8 +4,8 @@
     border-bottom: 1px solid #CCCCCC;
     display: flex;
     justify-content: space-between;
-    margin: $xs-size;
-    padding: $xs-size;
+    margin: 0 $xs-size 0 $xs-size;
+    padding: .3rem;
 
     &:last-child {
         border: none;
@@ -13,7 +13,7 @@
 }
 
 .skill-card__title {
-    font-size: $font-size-medium;
+    font-size: 1.6rem;
 }
 
 .skill-card__buttons {
@@ -26,7 +26,7 @@
     border: none;
     color: $dark-green;
     padding: .5rem;
-}
+ }
 .skill-card__button--inprogress {
     @extend .skill-card__button;
 
@@ -46,4 +46,13 @@
 .skill-fade-leave-active {
     opacity: 0;
     transition: .2s ease-in all
+}
+
+@media (max-width: $desktop-breakpoint) {
+    .skill-card {
+        padding: $xs-size;
+    }
+    .skill-card__title {
+        font-size: $font-size-medium;
+    }
 }

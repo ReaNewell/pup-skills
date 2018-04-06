@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import activeDogSelector from '../../selectors/activeDog';
-import CompletedSkillsList from '../CompletedSkillsList';
-import InProgressSkillsList from '../InProgressSkillsList';
+import MobileCompletedSkillsList from './MobileCompletedSkillsList';
+import MobileInProgressSkillsList from './MobileInProgressSkillsList';
 import SkillCard from '../SkillCard';
 import SkillsForm from '../SkillsForm';
 
@@ -45,8 +45,8 @@ class MobileDashboardSkills extends React.Component {
                             <p className={this.state.completedListIsActive ? "dashboard-skills__list-title--inprogress " : "dashboard-skills__list-title--inprogress dashboard-skills__list-title--active"} onClick={this.activateInProgressList}>In Progress</p>
                         </div>
                         <div className="dashboard-skills__lists">
-                            <CompletedSkillsList listIsActive={this.state.completedListIsActive} activeDog={this.state.activeDog}/>
-                            <InProgressSkillsList listIsActive={!this.state.completedListIsActive} activeDog={this.state.activeDog}/>
+                            <MobileCompletedSkillsList listIsActive={this.state.completedListIsActive} activeDog={this.state.activeDog}/>
+                            <MobileInProgressSkillsList listIsActive={!this.state.completedListIsActive} activeDog={this.state.activeDog}/>
                         </div>
                         <button className="dashboard-skills__button" onClick={this.openSkillModal}>Add Skill</button>
                         {this.state.skillModalOpen && <SkillsForm closeSkillModal={this.closeSkillModal} activeDog={this.state.activeDog}/>}

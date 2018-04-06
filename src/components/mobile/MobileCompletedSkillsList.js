@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import selectSkills from '../selectors/skillsByCategory';
+import selectSkills from '../../selectors/skillsByCategory';
 
 
-import SkillCard from './SkillCard';
+import SkillCard from '../SkillCard';
 
-export default class CompletedSkillsList extends React.Component {
+export default class MobileCompletedSkillsList extends React.Component {
     constructor(props) {
         super(props)
 
@@ -25,7 +25,6 @@ export default class CompletedSkillsList extends React.Component {
 
         return (
             <div className={this.props.listIsActive ? "skills-list" : "skills-list--inactive"}>
-                <p className="dashboard-skills__list-title">Completed</p>
                 {   
                     this.state.completedSkills.length === 0 ? (
                         <p className="skills-list__message">There are no completed skills.</p>

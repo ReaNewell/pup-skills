@@ -1,7 +1,7 @@
 .skills-list {
     background: white;
     border: 1rem solid $green;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 1rem;
     margin: 0 $xs-size $xs-size $xs-size;
     width: 100%;
 }
@@ -16,4 +16,10 @@
 .skills-list__message {
     margin: $xs-size;
     padding: $s-size;
+}
+
+@media (max-width: $desktop-breakpoint) {
+    .skills-list {
+        border-radius: 0 0 1rem 1rem;
+    }
 }

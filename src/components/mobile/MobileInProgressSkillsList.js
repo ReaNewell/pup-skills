@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import selectSkills from '../selectors/skillsByCategory';
-import SkillCard from './SkillCard';
+import selectSkills from '../../selectors/skillsByCategory';
+import SkillCard from '../SkillCard';
 
-export class InProgressSkillsList extends React.Component {
+export default class MobileInProgressSkillsList extends React.Component {
     constructor(props) {
         super(props)
 
@@ -23,7 +23,6 @@ export class InProgressSkillsList extends React.Component {
 
         return (
             <div className={this.props.listIsActive ? "skills-list--inprogress" : "skills-list--inactive"}>
-                <p className="dashboard-skills__list-title--inprogress">In Progress</p>
                 <ReactCSSTransitionGroup {...transition}>
                     {   
                         this.state.inProgressSkills.length === 0 ? (
@@ -42,5 +41,3 @@ export class InProgressSkillsList extends React.Component {
         )
     };
 };
-
-export default InProgressSkillsList;
