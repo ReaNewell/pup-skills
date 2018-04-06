@@ -13,7 +13,8 @@ class MobileDashboardSkills extends React.Component {
         this.state = {
             dogs: props.dogs,
             activeDog: props.activeDog,
-            completedListIsActive: true
+            completedListIsActive: true,
+            skillModalOpen: false
         }
     };
     componentWillReceiveProps(nextProps) {
@@ -26,6 +27,13 @@ class MobileDashboardSkills extends React.Component {
     activateInProgressList = () => {
         this.setState(() => ({ completedListIsActive: false }));
     };
+
+    openSkillModal = () => {
+        this.setState(() => ({ skillModalOpen: true }));
+    }
+    closeSkillModal = () => {
+        this.setState(() => ({ skillModalOpen: false }));
+    }
     render() {
         return (
             <div className="dashboard-skills">
@@ -40,7 +48,8 @@ class MobileDashboardSkills extends React.Component {
                             <CompletedSkillsList listIsActive={this.state.completedListIsActive} activeDog={this.state.activeDog}/>
                             <InProgressSkillsList listIsActive={!this.state.completedListIsActive} activeDog={this.state.activeDog}/>
                         </div>
-                        <SkillsForm activeDog={this.state.activeDog}/>
+                        <button className="dashboard-skills__button" onClick={this.openSkillModal}>Add Skill</button>
+                        {this.state.skillModalOpen && <SkillsForm closeSkillModal={this.closeSkillModal} activeDog={this.state.activeDog}/>}
                     </div>
                 }
                 

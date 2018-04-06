@@ -10,7 +10,9 @@ export class SkillCard extends React.Component {
             id: props.skill.id,
             dogId: props.skill.dogId,
             name: props.skill.name,
-            category: props.skill.category
+            category: props.skill.category,
+            description: props.skill.description ? props.skill.description : '',
+            activated: false
         }
     }
     startChangeCategory = (skill) => {
@@ -19,10 +21,25 @@ export class SkillCard extends React.Component {
     startRemoveSkill = skill => {
         this.props.startRemoveSkill(this.state.id, this.state.dogId);
     }
+    activateCard = () => {
+        this.setState(() => ({ activated: true }));
+    }
+    deactivateCard = () => {
+        this.setState(() => ({ activated: false }));
+    }
     render () {
         return (
             <div className="skill-card">
-                <h3 className="skill-card__title">{this.state.name}</h3>
+                {
+                    this.state.activated ? (
+                        <div>
+                            <h3 className="skill-card__title" onClick={this.deactivateCard}>{this.state.name}</h3>
+                            <p>{this.state.description}</p>
+                        </div>
+                    ) : (
+                        <h3 className="skill-card__title" onClick={this.activateCard}>{this.state.name}</h3>
+                    )
+                }
                 <div className="skill-card__buttons">
                     <button 
                         onClick={this.startChangeCategory} 

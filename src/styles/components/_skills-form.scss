@@ -1,10 +1,39 @@
+.skills-form__window {
+    align-items: center;
+    background: #FFFFFF99;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.skills-form__container {
+    align-items: center;
+    background: white;
+    border: 1rem solid $dark-green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: $l-size;
+    position: relative;
+}
+
 .skills-form {
     align-items: center;
-    border: 1px solid $green;
     display: flex;
-    justify-content: space-between;
-    margin: 0 $xs-size $xs-size $xs-size;
-    padding: $m-size $xs-size;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 $xs-size $m-size $xs-size;
+    padding: $s-size $xs-size;
+}
+
+.skills-form__required {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .skills-form__text-input {
@@ -12,7 +41,7 @@
     border-bottom: 3px solid $dark-green;
     font-size: $font-size-medium;
     padding-left: 5px;
-    width: 30%;
+    width: 50%;
 
     &:focus {
         outline: none;
@@ -26,6 +55,9 @@
     flex-direction: column;
     padding: 0;
 
+    div {
+        padding: $s-size;
+    }
     input {
         -webkit-appearance: radio;
         appearance: radio;
@@ -33,6 +65,13 @@
     label {
         padding-left: 5px;
     }
+}
+
+.skills-form__textarea {
+    border: 2px solid $green;
+    margin: $s-size $xs-size 0 $xs-size;
+    padding: $m-size $xs-size;
+    width: 70%;
 }
 
 .skills-form__button {
@@ -54,6 +93,9 @@
     .skills-form {
         flex-direction: column;
     }
+    .skills-form__required {
+        flex-direction: column;
+    }
     .skills-form__text-input, .skills-form__select-input, .skills-form__button {
         margin-bottom: $s-size;
         width: 100%;
@@ -61,6 +103,9 @@
     .skills-form__select-input {
         flex-direction: row;
         justify-content: space-around;
+    }
+    .skills-form__textarea {
+        width: 100%;
     }
     .skills-form__button {
         margin-bottom: 0;

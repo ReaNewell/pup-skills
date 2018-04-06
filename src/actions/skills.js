@@ -12,9 +12,10 @@ export const startAddSkill = (skillData = {}) => {
         const {
             name = "",
             category = "In Progress",
-            dogId = ""
+            dogId = "",
+            description = ""
         } = skillData;
-        const skill = { dogId, category, name };
+        const skill = { dogId, category, name, description };
 
         return database.ref(`users/${uid}/dogs/${skill.dogId}/skills`).push(skill).then((ref) => {
             dispatch(addSkill({
