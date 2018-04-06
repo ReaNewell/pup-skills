@@ -10,6 +10,7 @@ class SkillsForm extends React.Component {
         this.state = {
             name: '',
             category: "In Progress",
+            description: '',
             error: "",
             activeDog: props.activeDog
         }
@@ -18,9 +19,13 @@ class SkillsForm extends React.Component {
         this.setState(() => ({ activeDog: nextProps.activeDog }));
     }
     onCategoryChange = (e) => {
-        const category = e.target.value
+        const category = e.target.value;
         this.setState(() => ({ category }));
     };
+    onDescriptionChange = (e) => {
+        const description = e.target.value;
+        this.setState(() => ({ description }));
+    }
     onNameChange = (e) => {
         const name = e.target.value;
         this.setState(() => ({ name }));
@@ -46,11 +51,14 @@ class SkillsForm extends React.Component {
                 const skill = {
                     dogId: this.state.activeDog.id,
                     name: this.state.name,
-                    category: this.state.category
+                    category: this.state.category,
+                    description: this.state.description
                 };
                 this.props.startAddSkill(skill);
                 this.setState(() => ({ name: "" }));
                 this.setState(() => ({ category: "In Progress" }));
+                this.setState(() => ({ description: "" }));
+                this.props.closeSkillModal();
              } else {
                 this.setState(() => ({ error: "You cannot use the same name for more than one skill."}));
              }
@@ -58,39 +66,54 @@ class SkillsForm extends React.Component {
     };
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
-                { this.state.error && <p className="skills-form__error">{this.state.error}</p>}
-                <div className="skills-form">
-                    <input
-                        className="skills-form__text-input"
-                        onChange={this.onNameChange}
-                        placeholder="Add Skill"
-                        type="text"
-                        value={this.state.name}
-                    />
-                    <div className="skills-form__select-input">
-                        <div>
-                            <input 
-                                type="radio" 
-                                name="category-input" 
-                                value="In Progress" 
-                                id="in-progress" 
-                                defaultChecked 
-                                onClick={this.onCategoryChange}
+            <form onSubmit={this.onSubmit} className="skills-form__window">
+                <div className="skills-form__container">
+                    <h2>Add a Skill</h2>
+                    <div className="dog-form__exit" onClick={this.props.closeSkillModal}>X</div>
+                    { this.state.error && <p className="skills-form__error">{this.state.error}</p>}
+                    <div className="skills-form">
+                        <div className="skills-form__required">
+                            <input
+                                className="skills-form__text-input"
+                                onChange={this.onNameChange}
+                                placeholder="Add Skill"
+                                type="text"
+                                value={this.state.name}
                             />
-                            <label htmlFor="in-progress">In Progress</label>
+                            
+                            <div className="skills-form__select-input">
+                                <div>
+                                    <input 
+                                        type="radio" 
+                                        name="category-input" 
+                                        value="In Progress" 
+                                        id="in-progress" 
+                                        defaultChecked 
+                                        onClick={this.onCategoryChange}
+                                    />
+                                    <label htmlFor="in-progress">In Progress</label>
+                                </div>
+                                <div>
+                                    <input 
+                                        type="radio" 
+                                        name="category-input" 
+                                        value="Completed" 
+                                        id="completed" 
+                                        onClick={this.onCategoryChange}
+                                    />
+                                    <label htmlFor="completed">Completed</label>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <input 
-                                type="radio" 
-                                name="category-input" 
-                                value="Completed" 
-                                id="completed" 
-                                onClick={this.onCategoryChange}
-                            />
-                            <label htmlFor="completed">Completed</label>
-                        </div>
+                        <textarea
+                            className="skills-form__textarea"
+                            onChange={this.onDescriptionChange}
+                            placeholder="Add a skill description (optional)."
+                            value={this.state.description}
+                        >
+                        </textarea>
                     </div>
+                   
                     <button className="skills-form__button">Add Skill</button>
                 </div>
             </form>

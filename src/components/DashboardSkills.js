@@ -14,7 +14,8 @@ class DashboardSkills extends React.Component {
         this.state = {
             dogs: props.dogs,
             activeDog: props.activeDog,
-            completedListIsActive: true
+            completedListIsActive: true,
+            skillModalOpen: false
         }
     }
     componentWillReceiveProps(nextProps) {
@@ -27,6 +28,13 @@ class DashboardSkills extends React.Component {
     activateInProgressList = () => {
         this.setState(() => ({ completedListIsActive: false }));
     };
+
+    openSkillModal = () => {
+        this.setState(() => ({ skillModalOpen: true }));
+    }
+    closeSkillModal = () => {
+        this.setState(() => ({ skillModalOpen: false }));
+    }
     render() {
         return (
             <div className="dashboard-skills">
@@ -34,7 +42,8 @@ class DashboardSkills extends React.Component {
                     this.state.activeDog && 
                     <div className="dashboard-skills__container">
                         <h1 className="dashboard-skills__title">Here are {this.state.activeDog.name}'s skills</h1>
-                        <SkillsForm activeDog={this.state.activeDog}/>
+                        <button className="dashboard-skills__button" onClick={this.openSkillModal}>Add Skill</button>
+                        {this.state.skillModalOpen && <SkillsForm closeSkillModal={this.closeSkillModal} activeDog={this.state.activeDog}/>}
                         <div className="dashboard-skills__list-titles">
                             <p 
                                 className={this.state.completedListIsActive ? "dashboard-skills__list-title dashboard-skills__list-title--active" : "dashboard-skills__list-title"} 

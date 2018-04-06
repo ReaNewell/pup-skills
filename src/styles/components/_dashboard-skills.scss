@@ -4,6 +4,8 @@
 }
 
 .dashboard-skills__container {
+    box-sizing: border-box;
+    padding: 0 $xs-size; 
     width: 100%;
 }
 
@@ -50,6 +52,22 @@
 .dashboard-skills__lists {
     display: flex;
     width: 100%;
+}
+
+.dashboard-skills__button {
+    background: lighten($green, 15%);
+    border: none;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    color: darken($dark-green, 15%);
+    font-size: $font-size-medium;
+    height: 5rem;
+    padding: $xs-size $m-size;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 @media (max-width: $desktop-breakpoint) {
