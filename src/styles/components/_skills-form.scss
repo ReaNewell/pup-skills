@@ -10,104 +10,87 @@
     width: 100vw;
 }
 
-.skills-form__container {
-    align-items: center;
+.skills-form {
     background: white;
-    border: 1rem solid $dark-green;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: $l-size;
+    border: 1rem solid $green;
+    display: grid;
+    grid-gap: $m-size;
+    grid-template-areas: 
+        'title title'
+        'textInput radioInput'
+        'textArea textArea'
+        'formButton formButton';
     position: relative;
 }
 
-.skills-form {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 0 $xs-size $m-size $xs-size;
-    padding: $s-size $xs-size;
+.skills-form__title {
+    grid-area: title;
+    margin: $m-size $m-size 0 $m-size;
+    text-align: center;
 }
-
-.skills-form__required {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
+.skills-form__error {
+    text-align: center;
 }
 
 .skills-form__text-input {
     border: none;
     border-bottom: 3px solid $dark-green;
     font-size: $font-size-medium;
-    padding-left: 5px;
-    width: 50%;
+    grid-area: textInput;
+    margin: $m-size $m-size 0 $m-size;
+    width: 20rem;
 
     &:focus {
         outline: none;
     }
 }
+.skills-form__radio-input {
+    grid-area: radioInput;
+    margin: $m-size $m-size 0 $m-size;
+    width: 15rem;
 
-.skills-form__select-input {
-    @extend .skills-form__text-input;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-
-    div {
-        padding: $s-size;
-    }
-    input {
-        -webkit-appearance: radio;
+    #in-progress, #completed {
         appearance: radio;
-    }
-    label {
-        padding-left: 5px;
+        -moz-appearance: radio;
+        -webkit-appearance: radio;
+        margin-right: 5px;
     }
 }
 
 .skills-form__textarea {
     border: 2px solid $green;
-    margin: $s-size $xs-size 0 $xs-size;
-    padding: $m-size $xs-size;
-    width: 70%;
+    grid-area: textArea;
+    height: 5rem;
+    margin: $m-size $m-size 0 $m-size;
 }
 
 .skills-form__button {
-    @extend .skills-form__select-input;
-
     background: lighten($dark-green, 10%);
     border: 3px solid $dark-green;
     color: white;
-    display: block;
-    flex-direction: inherit;
-    padding: $xs-size;
-}
-
-.skills-form__error {
-    text-align: center;
+    grid-area: formButton;
+    margin: 0 $m-size $m-size $m-size;
 }
 
 @media (max-width: $desktop-breakpoint) {
     .skills-form {
-        flex-direction: column;
+        grid-template-areas: 
+            'title'
+            'textInput'
+            'radioInput'
+            'textArea'
+            'formButton';
+        width: 95vw;
     }
-    .skills-form__required {
-        flex-direction: column;
+    .skills-form__text-input, .skills-form__radio-input, .skills-form__button {
+        width: auto;
     }
-    .skills-form__text-input, .skills-form__select-input, .skills-form__button {
-        margin-bottom: $s-size;
-        width: 100%;
-    }
-    .skills-form__select-input {
-        flex-direction: row;
+    .skills-form__radio-input {
+        display: flex;
         justify-content: space-around;
-    }
-    .skills-form__textarea {
-        width: 100%;
-    }
-    .skills-form__button {
-        margin-bottom: 0;
+
+        label {
+            font-size: $font-size-medium;
+        }
     }
 }
