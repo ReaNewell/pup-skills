@@ -11,11 +11,15 @@
 }
 
 .header__title {
-    color: $light-yellow;
+    color: lighten($green, 20%);
     font-size: $font-size-xlarge;
     font-weight: 600;
     margin: 0;
     text-decoration: none;
+
+    span {
+        color: lighten($green, 10%);
+    }
 }
 
 .header__button {

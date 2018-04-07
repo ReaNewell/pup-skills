@@ -1,0 +1,43 @@
+.loader {
+	align-items: center;
+	display: flex;
+	font-family: 'Jura', sans-serif;
+	height: 95vh;
+	justify-content: center;
+}
+.loader__border {
+	align-items: center;
+	animation-name: orbit;
+	animation-duration: 1.2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	border-radius: 25rem;
+	display: flex;
+	height: 30rem;
+	justify-content: center;
+	position: relative;
+	width: 30rem;
+}
+.loader__ball {
+	background: $green;
+	border-radius: 5rem;
+	height: 4rem;
+	position: absolute;
+	top: -2.5rem;
+	width: 5rem;
+}
+.loader__text {
+	color: $green;
+	font-size: 5rem;
+	position: absolute;
+	
+	span {
+		color: $dark-green;
+	}
+}
+
+@keyframes orbit {
+	0% {transform: rotate(0deg);}
+	50% {transform: rotate(180deg);}
+	100% {transform: rotate(360deg);}
+}
