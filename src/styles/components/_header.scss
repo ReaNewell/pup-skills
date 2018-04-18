@@ -22,6 +22,13 @@
     }
 }
 
+.header__link {
+    color: $light-color;
+    font-size: $font-size-medium;
+    margin: $m-size;
+    text-decoration: none;
+}
+
 .header__button {
     background: var(--main-color--lighten-15);
     border: none;

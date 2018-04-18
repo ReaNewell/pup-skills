@@ -1,17 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
+import Header from '../components/Header';
 
 export const PublicRoute = ({ isAuthenticated, component: Component, hasProfileInfo, ...rest }) => (
     <Route {...rest} component={(props) => (
         isAuthenticated ? (
             hasProfileInfo ? (
-                <Redirect to='/dashboard' />
+                <div>
+                    <Header />
+                    <Component {...props} />
+                </div>
             ) : (
                 <Redirect to='/getting-started' />
             )
         ) : (
-            <Component {...props}/>
+            <div>
+                    <Header />
+                    <Component {...props} />
+            </div>
         )
     )}/>
 );

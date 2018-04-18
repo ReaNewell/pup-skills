@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import DashboardPage from '../components/DashboardPage';
 import GettingStartedPage from '../components/GettingStartedPage';
+import HelpPage from '../components/HelpPage'
 import LoginPage from '../components/LoginPage';
 import NotFoundPage from '../components/NotFoundPage';
 import SettingsPage from '../components/SettingsPage';
@@ -17,6 +18,7 @@ const AppRouter = () => (
         <div>
             <Switch>
                 <PublicRoute path="/" component={LoginPage} exact={true}/>
+                <PublicRoute path="/help" component={HelpPage} />
                 <PrivateRoute path="/dashboard" component={DashboardPage} />
                 <PrivateRoute path="/settings" component={SettingsPage} />
                 <PrivateRoute path="/getting-started" component={GettingStartedPage}/>

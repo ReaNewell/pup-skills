@@ -6,36 +6,8 @@
     display: flex;
     height: 100vh;
     justify-content: center;
+    position: absolute;
+    top: 0;
     width: 100vw;
-}
-
-.login-page__box {
-    align-items: center;
-    background: #ffffffd3;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    line-height: 1.2;
-    padding: $xl-size;
-    text-align: center;
-}
-
-.login-page__title {
-    font-size: 8rem;
-    margin-bottom: $m-size;
-}
-
-.login-page__button {
-    background: var(--secondary-color);
-    border: none;
-    border-radius: 1rem;
-    color: white;
-    padding: $s-size;
-}
-
-@media (max-width: $desktop-breakpoint) {
-    .login-page__box {
-        width: 90vw;
-    }
+    z-index: -1;
 }
