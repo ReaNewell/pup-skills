@@ -15,7 +15,7 @@
 }
 
 .dog-list__button {
-    background: $dark-green;
+    background: var(--secondary-color);
     border: none;
     border-radius: 1rem;
     box-sizing: none;

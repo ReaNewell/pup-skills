@@ -1,6 +1,6 @@
 .login-page {
     align-items: center;
-    background: $green url('/images/bk.jpg');
+    background: var(--main-color) url('/images/bk.jpg');
     background-position: center;
     background-size: cover;
     display: flex;
@@ -27,7 +27,7 @@
 }
 
 .login-page__button {
-    background: $dark-green;
+    background: var(--secondary-color);
     border: none;
     border-radius: 1rem;
     color: white;

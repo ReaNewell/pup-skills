@@ -1,6 +1,6 @@
 .name-card {
     color: white;
-    border-bottom: 1px solid darken($green, 15%);
+    border-bottom: 1px solid var(--secondary-color--darken-15);
     display: flex;
     justify-content: space-between;
     margin: $s-size;

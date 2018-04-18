@@ -11,22 +11,22 @@
 
 .dashboard-skills__header {
     align-items: center;
-    border-bottom: 3px solid $dark-green;
+    border-bottom: 3px solid var(--secondary-color);
     display: flex;
     margin: 0 $xs-size $m-size $xs-size;
 }
 .dashboard-skills__title {
-    color: $dark-green;
+    color: var(--secondary-color);
     flex: 3;
     font-size: $font-size-large;
     text-align: center;
 }
 .dashboard-skills__button {
-    background: lighten($green, 15%);
+    background: var(--main-color--lighten-15);
     border: none;
     border-radius: 1rem;
     box-sizing: border-box;
-    color: darken($dark-green, 15%);
+    color: var(--secondary-color--darken-15);
     flex: 1;
     font-size: $font-size-medium;
     height: 5rem;
@@ -46,7 +46,7 @@
 }
 
 .dashboard-skills__list-title {
-    background: $green;
+    background: var(--main-color);
     box-sizing: border-box;
     color: white;
     font-size: $font-size-large;
@@ -55,7 +55,7 @@
     width: 100%;
 }
 .dashboard-skills__list-title--inprogress {
-    background: lighten($dark-green, 10%);
+    background: var(--secondary-color--lighten-10);
     box-sizing: border-box;
     color: white;
     font-size: $font-size-large; 

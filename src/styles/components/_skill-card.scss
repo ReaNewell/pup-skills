@@ -24,13 +24,13 @@
 .skill-card__button {
     background: white;
     border: none;
-    color: $dark-green;
+    color: var(--secondary-color);
     padding: .5rem;
  }
 .skill-card__button--inprogress {
     @extend .skill-card__button;
 
-    color: $dark-green;
+    color: var(--secondary-color);
 }
 
 .skill-fade-enter {

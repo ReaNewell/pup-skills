@@ -19,7 +19,7 @@
 	width: 30rem;
 }
 .loader__ball {
-	background: $green;
+	background: var(--main-color);
 	border-radius: 5rem;
 	height: 4rem;
 	position: absolute;
@@ -27,12 +27,12 @@
 	width: 5rem;
 }
 .loader__text {
-	color: $green;
+	color: var(--main-color);
 	font-size: 5rem;
 	position: absolute;
 	
 	span {
-		color: $dark-green;
+		color: var(--secondary-color);
 	}
 }
 

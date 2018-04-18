@@ -12,7 +12,7 @@
 
 .skills-form {
     background: white;
-    border: 1rem solid $green;
+    border: 1rem solid var(--main-color);
     display: grid;
     grid-gap: $m-size;
     grid-template-areas: 
@@ -34,7 +34,7 @@
 
 .skills-form__text-input {
     border: none;
-    border-bottom: 3px solid $dark-green;
+    border-bottom: 3px solid var(--secondary-color);
     font-size: $font-size-medium;
     grid-area: textInput;
     margin: $m-size $m-size 0 $m-size;
@@ -58,15 +58,15 @@
 }
 
 .skills-form__textarea {
-    border: 2px solid $green;
+    border: 2px solid var(--main-color);
     grid-area: textArea;
     height: 5rem;
     margin: $m-size $m-size 0 $m-size;
 }
 
 .skills-form__button {
-    background: lighten($dark-green, 10%);
-    border: 3px solid $dark-green;
+    background: var(--secondary-color--lighten-10);
+    border: 3px solid var(--secondary-color);
     color: white;
     grid-area: formButton;
     margin: 0 $m-size $m-size $m-size;

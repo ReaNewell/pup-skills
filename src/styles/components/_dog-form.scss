@@ -12,7 +12,7 @@
 
 .dog-form {
     align-items: center;
-    background: $dark-green;
+    background: var(--secondary-color);
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@
 .dog-form__text-input {
     background: none;
     border: none;
-    border-bottom: 3px solid darken($dark-green, 15%);
+    border-bottom: 3px solid var(--secondary-color--darken-15);
     color: white;
     font-size: 3rem;
     height: 5rem;
@@ -50,16 +50,16 @@
     width: 100%;
 
     &:focus {
-        border-bottom: 3px solid lighten($dark-green, 15%);
+        border-bottom: 3px solid var(--secondary-color--lighten-15);
         outline: none;
     }
 }
 
 .dog-form__button {
-    background: lighten($green, 15%);
+    background: var(--main-color--lighten-15);
     border: none;
     border-radius: 1rem;
-    color: darken($dark-green, 15%);
+    color: var(--secondary-color--darken-15);
     font-size: 2rem;
     height: 5rem;
     width: 50%;
@@ -70,7 +70,7 @@
 }
 
 .dog-form__exit {
-    color: $green;
+    color: var(--main-color);
     cursor: pointer;
     font-weight: bold;
     position: absolute;

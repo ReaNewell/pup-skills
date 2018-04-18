@@ -18,7 +18,10 @@ exports[`should render header correctly 1`] = `
         <h1
           className="header__title"
         >
-          Pup Skills
+          Pup
+          <span>
+            Skills
+          </span>
         </h1>
       </Link>
       <button

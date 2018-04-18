@@ -31,6 +31,21 @@ export const startUpdateProfile = (profileInfo) => {
     };
 };
 
+// UPDATE_THEME
+export const updateTheme = (theme = 'default') => ({
+    type: "UPDATE_THEME",
+    theme
+});
+export const startUpdateTheme = (newTheme) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+
+        return database.ref(`users/${uid}/profileInfo`).update({ theme: newTheme }).then(() => {
+            dispatch(updateTheme(newTheme));
+        });
+    };
+};
+
 // SET_PROFILE
 export const setProfile = (profileInfo) => ({
     type: "SET_PROFILE",

@@ -3,7 +3,7 @@
 }
 
 .settings-page__board {
-    border: 1rem solid $dark-green;
+    border: 1rem solid var(--secondary-color);
     border-radius: 1rem;
     font-size: 125%;
     margin: $l-size;
@@ -11,12 +11,12 @@
 }
 
 .settings-page__subtitle {
-    color: $dark-green;
+    color: var(--secondary-color);
 }
 
 .settings-page__board__tile {
     align-items: center;
-    background: lighten($green, 10%);
+    background: var(--main-color--lighten-10);
     display: flex;
     justify-content: space-between;
     margin: .5rem;
@@ -26,7 +26,7 @@
 .settings-page__text-input {
     background: white;
     border: none;
-    border-bottom: 2px solid $green;
+    border-bottom: 2px solid var(--main-color);
 
     &:focus {
         outline: none;
@@ -34,8 +34,8 @@
 }
 
 .settings-page__button {
-    background: $dark-green;
-    border: 3px solid lighten($green, 10%);
+    background: var(--secondary-color);
+    border: 3px solid var(--main-color--lighten-10);
     border-radius: 1rem;
     box-sizing: none;
     color: white;
@@ -66,7 +66,7 @@
 
 .warning-modal {
     align-items: center;
-    background: $dark-green;
+    background: var(--secondary-color);
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -81,6 +81,35 @@
     color: white; 
     margin: $m-size;
     text-align: center;
+}
+.theme-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.theme-button {
+    background: linear-gradient(45deg, hsl(112, 65%, 75%), hsl(92, 44%, 59%));
+    border: none;
+    border-radius: 1rem;
+    height: $l-size;
+    margin: 0 $xs-size;
+    width: $l-size;
+
+    &:focus {
+        outline: none;
+    }
+}
+.theme-button--blue {
+    @extend .theme-button;
+    background: linear-gradient(45deg, hsl(204, 65%, 75%), hsl(204, 44%, 59%))
+}
+.theme-button--orange {
+    @extend .theme-button;
+    background: linear-gradient(45deg, hsl(26, 65%, 75%), hsl(26, 44%, 59%))
+}
+.theme-button--pink {
+    @extend .theme-button;
+    background: linear-gradient(45deg, hsl(332, 65%, 75%), hsl(332, 44%, 59%))
 }
 
 @media (max-width: $desktop-breakpoint) {

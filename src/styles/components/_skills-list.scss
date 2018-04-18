@@ -1,13 +1,13 @@
 .skills-list {
     background: white;
-    border: 1rem solid $green;
+    border: 1rem solid var(--main-color);
     border-radius: 1rem;
     margin: 0 $xs-size $xs-size $xs-size;
     width: 100%;
 }
 .skills-list--inprogress {
     @extend .skills-list;
-    border: 1rem solid lighten($dark-green, 10%);
+    border: 1rem solid var(--secondary-color--lighten-10);
 }
 .skills-list--inactive {
     display: none;

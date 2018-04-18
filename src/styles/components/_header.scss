@@ -1,5 +1,5 @@
 .header {
-    background: $dark-green;
+    background: var(--secondary-color);
     margin-bottom: $m-size;
 }
 
@@ -11,22 +11,22 @@
 }
 
 .header__title {
-    color: lighten($green, 20%);
+    color: var(--main-color--lighten-20);
     font-size: $font-size-xlarge;
     font-weight: 600;
     margin: 0;
     text-decoration: none;
 
     span {
-        color: lighten($green, 10%);
+        color: var(--main-color--lighten-10);
     }
 }
 
 .header__button {
-    background: lighten($green, 15%);
+    background: var(--main-color--lighten-15);
     border: none;
     border-radius: 1rem;
-    color: darken($dark-green, 15%);
+    color: var(--secondary-color--darken-15);
     font-size: $font-size-medium;
     height: 5rem;
     padding: $xs-size $m-size;
