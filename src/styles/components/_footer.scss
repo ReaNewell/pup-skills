@@ -1,0 +1,14 @@
+.footer {
+    align-items: center;
+    background: var(--main-color);
+    box-sizing: border-box;
+    display: flex;
+    height: 7rem;
+    justify-content: space-around;
+    width: 100vw;
+
+    p, a {
+        color: #ffffffcc;
+        text-decoration: none;
+    }
+}
