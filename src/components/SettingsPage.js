@@ -216,7 +216,8 @@ class SettingsPage extends React.Component {
 
 const mapStateToProps = (state) => ({
     dogs: state.dogs,
-    profileName: state.profileInfo.profileName
+    profileName: state.profileInfo.profileName,
+    profilePicture: state.profileInfo.profilePicture
 });
 
 const mapDispatchToProps = (dispatch) => ({

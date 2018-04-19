@@ -9,7 +9,8 @@ class DogForm extends React.Component {
         this.state = {
             name: '',
             breed: '',
-            error: ""
+            error: "",
+            uploadComplete: false
         }
     };
     onBreedChange = (e) => {
@@ -20,9 +21,16 @@ class DogForm extends React.Component {
         const name = e.target.value;
         this.setState(() => ({ name }));
     };
+    onUploadComplete = (e) => {
+        const upload = e.target.value;
+        if (upload) {
+            this.setState(() => ({ uploadComplete: true}));
+        }
+    };
     // Adds dog object to dogs array in Firebase, then closes the modal form.
     onSubmit = (e) => {
         e.preventDefault();
+        const selectedFile = document.getElementById('file-input').files[0];
 
         if (!this.state.name) {
             this.setState(() => ({ error: "You must name your Pup." }));
@@ -31,7 +39,7 @@ class DogForm extends React.Component {
             this.props.startAddDog({
                 name: this.state.name,
                 breed: this.state.breed
-            });
+            }, selectedFile);
             this.setState(() => ({ name: "" }));
             this.setState(() => ({ breed: "" }));
             this.props.closeModal();
@@ -44,6 +52,15 @@ class DogForm extends React.Component {
                 <div className="dog-form">
                     <div className="dog-form__exit" onClick={this.props.closeModal}>X</div>
                     <h3 className="dog-form__title">Add your Pup</h3>
+                    <label className={this.state.uploadComplete ? "getting-started__file-upload--complete" : "getting-started__file-upload"}>
+                        Add Pup Picture
+                        <input 
+                            className='getting-started__file-input'
+                            id='file-input'
+                            onChange={this.onUploadComplete}
+                            type='file'
+                        />
+                    </label>
                     <div className="dog-form__entry">
                         <label className="dog-form__label">Pup's Name</label>
                         <input
@@ -71,6 +88,6 @@ class DogForm extends React.Component {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    startAddDog: (dog) => dispatch(startAddDog(dog))
+    startAddDog: (dog, picture) => dispatch(startAddDog(dog, picture))
 });
 export default connect(undefined, mapDispatchToProps)(DogForm);

@@ -1,7 +1,13 @@
 .name-card {
+    align-items: center;
     color: white;
     border-bottom: 1px solid var(--secondary-color--darken-15);
     display: flex;
     justify-content: space-between;
     margin: $s-size;
+}
+
+.name-card__dog-info {
+    align-items: center;
+    display: flex;
 }

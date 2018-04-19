@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startUpdateProfile } from '../actions/profile';
+import { startUpdatePicture, startUpdateProfile } from '../actions/profile';
 
 class GettingStartedPage extends React.Component {
     constructor(props) {
@@ -14,15 +14,15 @@ class GettingStartedPage extends React.Component {
         const profileName = e.target.value;
         this.setState(() => ({ profileName }))
     };
-    // Updates profile information, then sends user to the dashboard.
     onSubmit = (e) => {
         e.preventDefault();
-        
-        const profileInfo = {
-            profileName: this.state.profileName
+
+        if (!!this.state.profileName) {
+            const profileInfo = {
+                profileName: this.state.profileName
+            }
+            this.props.startUpdateProfile(profileInfo);
         }
-        this.props.startUpdateProfile(profileInfo);
-        this.props.history.push('/dashboard');
     };
     componentWillMount() {
         if (this.props.hasProfileName) {
@@ -36,10 +36,9 @@ class GettingStartedPage extends React.Component {
                 <form onSubmit={this.onSubmit} className="getting-started__form">
                     <input
                         className="getting-started__text-input"
-                        onChange={this.onNameChange}
                         placeholder="Profile Name"
+                        onChange={this.onNameChange}
                         type="text"
-                        required
                     />
                     <button className="getting-started__button">Get Started</button>
                 </form>
@@ -52,6 +51,7 @@ const mapStateToProps = (state) => ({
     hasProfileName : state.profileInfo.profileName
 });
 const mapDispatchToProps = (dispatch) => ({
+    startUpdatePicture: (picture) => dispatch(startUpdatePicture(picture)),
     startUpdateProfile: (profileInfo) => dispatch(startUpdateProfile(profileInfo))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(GettingStartedPage);

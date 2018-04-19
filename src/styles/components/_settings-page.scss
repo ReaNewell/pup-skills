@@ -1,8 +1,13 @@
+.settings-page {
+    min-height: 85vh;
+}
+
 .settings-page__title {
     margin-left: $l-size;
 }
 
 .settings-page__board {
+    background: white;
     border: 1rem solid var(--secondary-color);
     border-radius: 1rem;
     font-size: 125%;
@@ -31,6 +36,17 @@
     &:focus {
         outline: none;
     }
+}
+
+.settings-page__label {
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.settings-page__camera {
+    padding-left: 5px;
+    width: 30px;
 }
 
 .settings-page__button {
@@ -121,6 +137,7 @@
         border-left: none; border-right: none;
         border-radius: 0;
         margin: 0;
+        padding: $xs-size;
     }
     .warning-modal {
         width: 90vw;

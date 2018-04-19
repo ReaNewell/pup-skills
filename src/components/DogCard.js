@@ -10,6 +10,7 @@ export class DogCard extends React.Component {
         this.state = {
             id: props.dog.id,
             name: props.dog.name,
+            picture: props.dog.pupPicture,
             skills: selectSkills(props.dog.skills, "Completed").length
         }
     };
@@ -24,6 +25,7 @@ export class DogCard extends React.Component {
     render () {
         return (
             <div className={this.props.dog.isActive ? "dog-card dog-card--active" : "dog-card"} onClick={this.activateDog}>
+                {this.state.picture && <img src={this.state.picture} className='dog-card__picture'/>}
                 <h3>{this.state.name} knows {this.state.skills} skills.</h3>
             </div>
         );

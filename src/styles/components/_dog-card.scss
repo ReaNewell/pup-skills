@@ -5,9 +5,13 @@
     border-radius: 1rem;
     color: black;
     display: flex;
-    justify-content: space-between;
+    height: 50px;
     margin-bottom: $s-size;
-    padding: $s-size;
+    padding: $s-size $s-size $s-size 0;
+
+    h3 {
+        margin-left: 5px;
+    }
 }
 
 .dog-card--active {
@@ -24,4 +28,17 @@
     &:focus {
         outline: none;
     }
+}
+
+.dog-card__picture {
+    background: #ffffffcc;
+    height: 50px;
+    width: 50px;
+}
+.dog-card__picture--name-card {
+    background: #ffffffcc;
+    border-radius: 1rem;
+    height: 50px;
+    margin-left: 5px;
+    width: 50px;
 }

@@ -27,7 +27,7 @@ class NameCard extends React.Component {
         return (
             <div className="name-card" onClick={this.props.toggleBar}>
                 <h2>Hello, {this.props.profileName}.</h2>
-                {(this.state.width < 720 && this.state.activeDog) && <h2>{this.state.activeDog.name}</h2>}
+                {(this.state.width < 720 && this.state.activeDog) && <div className='name-card__dog-info'><h2>{this.state.activeDog.name}</h2>{this.state.activeDog.pupPicture && <img src={this.state.activeDog.pupPicture} className="dog-card__picture--name-card"/>}</div>}
             </div>
         )
     }
