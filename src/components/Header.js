@@ -11,7 +11,7 @@ export const Header = ({ startLogout, startLogin, isAuthenticated }) => (
                     <h1 className="header__title">Pup<span>Skills</span></h1>
                 </Link>
                 <div>
-                    <Link to='/help' className="header__link">Help</Link>
+                    <Link to='/help' className="header__link">Help/Privacy</Link>
                     {isAuthenticated ? <button onClick={startLogout} className="header__button">Logout</button> : <button onClick={startLogin} className="header__button">Sign In</button>}
                 </div>
             </div>
