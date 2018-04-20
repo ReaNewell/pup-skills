@@ -42,6 +42,82 @@
     }
 }
 
+.login-modal {
+    align-items: center;
+    background: #ffffff99;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+}
+.login-modal__box {
+    align-items: center;
+    background: white;
+    border: 1rem solid var(--main-color--lighten-10);
+    border-radius: 1rem;
+    display: grid;
+    grid-column-gap: 1%;
+    grid-template-areas: 
+        '. email email email email .'
+        '. password password password password .'
+        '. signUp signUp signIn signIn .'
+        '. signInGoogle signInGoogle signInGoogle signInGoogle . ';
+    grid-template-columns: 7.5% 20% 20% 20% 20% 7.5%;
+    grid-template-rows: 25% 25% 25% 25%;
+    height: 400px;
+    padding: $m-size;
+    width: 350px;
+}
+.login-modal__text-input {
+    border: none;
+    border-bottom: 3px solid var(--secondary-color);
+    font-size: $font-size-medium;
+    grid-area: textInput;
+    margin: $m-size $m-size 0 $m-size;
+
+    &:focus {
+        outline: none;
+    }
+}
+.login-modal__email {
+    @extend .login-modal__text-input;
+    grid-area: email;
+}
+.login-modal__password {
+    @extend .login-modal__text-input;
+    grid-area: password;
+}
+.login-modal__button {
+    background: var(--main-color--lighten-15);
+    border: none;
+    border-radius: 1rem;
+    color: var(--secondary-color--darken-15);
+    font-size: $font-size-medium;
+    height: 5rem;
+    padding: $xs-size $m-size;
+
+    &:focus {
+        outline: none;
+    }
+}
+.login-modal__button--signUp {
+    @extend .login-modal__button;
+    grid-area: signUp;
+}
+.login-modal__button--signIn {
+    @extend .login-modal__button;
+    grid-area: signIn;
+}
+.login-modal__button--signInGoogle {
+    @extend .login-modal__button;
+    background: rgb(153, 153, 233);
+    color: #ffffffdd;
+    grid-area: signInGoogle;
+}
+
 @media (max-width: $desktop-breakpoint) {
     .header {
         margin-bottom: 0;
