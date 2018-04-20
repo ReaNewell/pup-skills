@@ -20,9 +20,11 @@ export default class MobileDashboardSideBar extends React.Component {
     };
     render() {
         return (
-            <div className="dashboard-sidebar" >
-                <NameCard toggleBar={this.toggleBar}/>
-                { this.state.barIsOpen && <DogList toggleBar={this.toggleBar}/>}
+            <div className="dashboard-sidebar__container">
+                <div className="dashboard-sidebar" >
+                    <NameCard toggleBar={this.toggleBar}/>
+                    { this.state.barIsOpen && <DogList toggleBar={this.toggleBar}/>}
+                </div>
             </div>
         )
     };

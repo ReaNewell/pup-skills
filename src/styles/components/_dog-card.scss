@@ -5,16 +5,20 @@
     border-radius: 1rem;
     color: black;
     display: flex;
-    height: 50px;
+    height: 75px;
     margin-bottom: $s-size;
     padding: $s-size $s-size $s-size 0;
+    min-width: 250px;
 
     h3 {
+        color: var(--secondary-color--darken-15);
+        font-size: 3rem;
         margin-left: 5px;
     }
 }
 
 .dog-card--active {
+    background: var(--main-color--lighten-10);
     border-left: 2rem solid var(--main-color--lighten-25);
 }
 
@@ -32,8 +36,9 @@
 
 .dog-card__picture {
     background: #ffffffcc;
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    object-fit: cover;
+    width: 75px;
 }
 .dog-card__picture--name-card {
     background: #ffffffcc;

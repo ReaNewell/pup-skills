@@ -20,8 +20,11 @@
 }
 
 @media (max-width: $desktop-breakpoint) {
+    .dashboard-sidebar__container {
+        margin: 0;
+    }
     .dashboard-sidebar {
         border-radius: 0;
-        padding: 0;
+
     }
 }

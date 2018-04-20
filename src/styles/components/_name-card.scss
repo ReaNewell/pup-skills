@@ -5,9 +5,20 @@
     display: flex;
     justify-content: space-between;
     margin: $s-size;
+    padding: $xs-size;
 }
 
 .name-card__dog-info {
     align-items: center;
     display: flex;
+
+    img {
+        object-fit: cover;
+    }
+}
+
+@media (max-width: $desktop-breakpoint) {
+    .name-card {
+        margin: 0;
+    }
 }

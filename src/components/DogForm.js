@@ -31,6 +31,7 @@ class DogForm extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
         const selectedFile = document.getElementById('file-input').files[0];
+        ImageTools
 
         if (!this.state.name) {
             this.setState(() => ({ error: "You must name your Pup." }));
@@ -55,6 +56,7 @@ class DogForm extends React.Component {
                     <label className={this.state.uploadComplete ? "getting-started__file-upload--complete" : "getting-started__file-upload"}>
                         Add Pup Picture
                         <input 
+                            accept=".png, .jpg, .jpeg"
                             className='getting-started__file-input'
                             id='file-input'
                             onChange={this.onUploadComplete}
