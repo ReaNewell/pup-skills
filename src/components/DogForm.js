@@ -31,7 +31,6 @@ class DogForm extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
         const selectedFile = document.getElementById('file-input').files[0];
-        ImageTools
 
         if (!this.state.name) {
             this.setState(() => ({ error: "You must name your Pup." }));
