@@ -55,8 +55,8 @@
 .getting-started__file-input {
     height: 1px;
     margin-bottom: 5px;
-    position: absolute;
-    top: 0px;
+    position: fixed;
+    top: -1px;
     width: 1px;
     z-index: -2;
 }
