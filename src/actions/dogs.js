@@ -162,6 +162,8 @@ export const startSetDogs = () => {
                 });
             });
 
+            dogs[0].isActive = true;
+
             dispatch(setDogs(dogs));
         });
     };
