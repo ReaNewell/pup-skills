@@ -1,22 +1,11 @@
 .dashboard-sidebar {
     background: var(--main-color);
-    border-radius: 1rem;
     box-sizing: border-box;
+    min-height: 85vh;
+    max-width: 25rem;
     padding: $xs-size;
     top: 0;
     width: 100%;
-}
-.dashboard-sidebar__container {
-    margin: 0 $s-size;
-}
-
-
-.bar-slide-appear {
-    opacity: 0
-}
-.bar-slide-appear-active { 
-    opacity: 1;
-    transition: 500 ease all;
 }
 
 @media (max-width: $desktop-breakpoint) {
@@ -25,6 +14,6 @@
     }
     .dashboard-sidebar {
         border-radius: 0;
-
+        min-height: auto;
     }
 }

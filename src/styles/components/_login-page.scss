@@ -1,10 +1,10 @@
-.login-page {
+.login-page__jumbotron {
     align-items: center;
     background: var(--main-color) url('/images/bk.jpg');
     background-position: center;
     background-size: cover;
     display: flex;
-    min-height: 85vh;
+    min-height: 45vh;
     justify-content: center;
     width: 100vw;
     z-index: -1;
