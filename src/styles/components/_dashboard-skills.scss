@@ -1,6 +1,6 @@
 .dashboard-skills {
     background: #FFFFFF;
-    width: 75%;
+    width: 100rem;
 }
 
 .dashboard-skills__container {
@@ -19,12 +19,11 @@
     color: var(--secondary-color);
     flex: 3;
     font-size: $font-size-large;
-    text-align: center;
 }
 .dashboard-skills__button {
     background: var(--main-color--lighten-15);
     border: none;
-    border-radius: 1rem;
+    border-bottom: 3px solid var(--main-color);
     box-sizing: border-box;
     color: var(--secondary-color--darken-15);
     flex: 1;
@@ -80,14 +79,12 @@
         width: 100vw;
     }
     .dashboard-skills__list-title {
-        
         border-radius: 1rem 1rem 0 0;
         margin: 0  $xs-size;
         padding: .5rem 0 0 0;
         width: 50%;
     }
-    .dashboard-skills__list-title--inprogress {
-        
+    .dashboard-skills__list-title--inprogress {    
         border-radius: 1rem 1rem 0 0;
         margin: 0 $xs-size; 
         padding: .5rem 0 0 0;

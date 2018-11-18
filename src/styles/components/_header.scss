@@ -31,11 +31,10 @@
 .header__button {
     background: var(--main-color--lighten-15);
     border: none;
-    border-radius: 1rem;
     color: var(--secondary-color--darken-15);
     font-size: $font-size-medium;
-    height: 5rem;
-    padding: $xs-size $m-size;
+    height: 4rem;
+    padding: .3rem 1rem;
 
     &:focus {
         outline: none;
