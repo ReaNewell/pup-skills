@@ -31,10 +31,6 @@
     height: 5rem;
     padding: $xs-size $m-size;
     width: 100%;
-
-    &:focus {
-        outline: none;
-    }
 }
 
 .dashboard-skills__list-titles {
@@ -80,13 +76,13 @@
     }
     .dashboard-skills__list-title {
         border-radius: 1rem 1rem 0 0;
-        margin: 0  $xs-size;
+        margin-right: .25rem;
         padding: .5rem 0 0 0;
         width: 50%;
     }
     .dashboard-skills__list-title--inprogress {    
         border-radius: 1rem 1rem 0 0;
-        margin: 0 $xs-size; 
+        margin-left: 0.25rem;
         padding: .5rem 0 0 0;
         width: 50%;
     }

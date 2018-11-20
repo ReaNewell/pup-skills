@@ -3,13 +3,14 @@
     border: 1rem solid var(--main-color);
     margin: 0 $xs-size $xs-size $xs-size;
     width: 100%;
-}
-.skills-list--inprogress {
-    @extend .skills-list;
-    border: 1rem solid var(--secondary-color--lighten-10);
-}
-.skills-list--inactive {
-    display: none;
+
+    &--inprogress {
+        @extend .skills-list;
+        border: 1rem solid var(--secondary-color--lighten-10);
+    }
+    &--inactive {
+        display: none;
+    }
 }
 
 .skills-list__message {
@@ -19,6 +20,12 @@
 
 @media (max-width: $desktop-breakpoint) {
     .skills-list {
-        border-radius: 0 0 1rem 1rem;
+        border: .5rem solid var(--main-color);
+        margin: 0 0 $xs-size 0;
+
+        &--inprogress {
+            border: 0.5rem solid var(--secondary-color--lighten-10);
+        }
     }
+    
 }
