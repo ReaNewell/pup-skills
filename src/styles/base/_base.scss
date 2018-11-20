@@ -36,3 +36,9 @@ button:disabled {
 .is-active {
     font-weight: bold;
 }
+
+@media (max-width: $desktop-breakpoint) {
+    body {
+        background: #FFF;
+    }
+}
