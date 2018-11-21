@@ -12,7 +12,6 @@ import LoadingPage from './components/LoadingPage';
 import { login, logout } from './actions/auth';
 import { startSetDogs } from './actions/dogs';
 import { startSetProfile } from './actions/profile';
-import { updateProfile } from './actions/profile'
 
 const store = configureStore();
 const jsx = (

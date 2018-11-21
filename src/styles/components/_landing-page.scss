@@ -1,0 +1,128 @@
+.landing-page {
+    background: #fff;
+
+    &__jumbotron {
+        align-items: center;
+        background: var(--main-color) url('/images/bk.jpg');
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        min-height: 65vh;
+        justify-content: center;
+        width: 100vw;
+        z-index: -1;
+    }
+    &__description {
+        font-size: 1.8rem;
+        padding: $l-size;
+        text-align: center;
+        width: 100vw;
+        
+        p {
+            margin: 0 auto;
+            width: 60%;
+        }
+    }
+    &__screenshot {
+        background: var(--main-color);
+        padding: $m-size;
+
+        img {
+            display: block;
+            margin: auto;
+            height: 50rem;
+        }
+    }
+    &__points {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: $l-size 0 $m-size 0;
+    }
+    &__point {
+        align-items: center;
+        // border: 5px solid var(--main-color);
+        display: flex;
+        flex-direction: column;
+        height: 30rem;
+        justify-content: start;
+        margin: $m-size $m-size;
+        padding: $l-size;
+        text-align: center;
+        width: 20vw;
+
+        img {
+            height: 10rem;
+            margin-bottom: $l-size;
+        }
+    }
+    &__join-banner {
+        align-items: center;
+        border-top: 5px solid var(--secondary-color);
+        display: flex;
+        justify-content: center;
+        padding: $xl-size 0;
+        text-align: center;
+
+        p {
+            align-items: center;
+            background: var(--main-color--lighten-15);
+            color: hsl(112, 44%, 40%);
+            display: flex;
+            font-size: $font-size-large;
+            height: 12rem;
+            justify-content: center;
+            width: 70%;
+            z-index: 1;
+
+            &:hover {
+                background: var(--main-color--lighten-20);
+            }
+        }
+        &::before {
+            background: hsl(112, 44%, 69%);
+            content: '';
+            height: 14rem;
+            position: absolute;
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 55rem) {
+    .landing-page {
+        &__description {
+            p {
+                width: 90%;
+            }
+        }
+        &__screenshot {
+            img {
+                height: auto;
+                width: 80vw;
+            }
+        }
+        &__points {
+            flex-direction: column;
+        }
+        &__point {
+            height: auto;
+            width: 90vw;
+        }
+        &__join-banner {
+            p {
+                font-size: $font-size-large;
+                height: 12rem;
+                width: 90%;
+                z-index: 1;
+            }
+            &::before {
+                background: hsl(112, 44%, 69%);
+                content: '';
+                height: 14rem;
+                position: absolute;
+                width: 70%;
+            }
+        }
+    }
+}
