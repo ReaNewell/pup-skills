@@ -1,0 +1,77 @@
+.auth-modal {
+    align-items: center;
+    background: #ffffff99;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 2;
+
+    &__box {
+        align-items: center;
+        background: white;
+        box-sizing: border-box;
+        display: grid;
+        grid-column-gap: 1%;
+        grid-template-areas: 
+            '. .            .            .            .            .'
+            '. email        email        email        email        .'
+            '. password     password     password     password     .'
+            '. error        error        error        error        .'
+            '. signUp       signUp       signIn       signIn       .'
+            '. .            .            .            .            .';
+        grid-template-columns: minmax(7.5%, auto) minmax(auto, 10rem) minmax(auto, 10rem) minmax(auto, 10rem) minmax(auto, 10rem) minmax(7.5%, auto);
+        grid-template-rows: 30% auto auto auto auto 30%;
+        height: 100vh;
+        position: fixed;
+        width: 100vw;
+        z-index: 3;
+    }
+    &__text-input {
+        border: none;
+        border-bottom: 3px solid var(--secondary-color);
+        font-size: $font-size-medium;
+    
+        &:focus {
+            outline: none;
+        }
+    }
+    &__email {
+        @extend .auth-modal__text-input;
+        grid-area: email;
+    }
+    &__password {
+        @extend .auth-modal__text-input;
+        grid-area: password;
+    }
+    &__button {
+        background: var(--main-color--lighten-15);
+        border: none;
+        border-radius: 1rem;
+        color: var(--secondary-color--darken-15);
+        font-size: $font-size-medium;
+        height: 5rem;
+        padding: $xs-size $m-size;
+    
+        &:focus {
+            outline: none;
+        }
+    }
+    &__button--signUp {
+        @extend .auth-modal__button;
+        grid-area: signUp;
+    }
+    &__button--signIn {
+        @extend .auth-modal__button;
+        grid-area: signIn;
+    }
+    &__error {
+        color: hsl(0, 65%, 75%);
+        font-weight: bold;
+        grid-area: error;
+        left: 4rem; top: 2rem;
+        text-align: center;
+    }
+}

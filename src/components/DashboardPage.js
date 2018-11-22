@@ -28,9 +28,11 @@ class DashboardPage extends React.Component {
     };
     render() {
         return (
-            <div className="dashboard-page content-container">
-                {this.state.width > 720 ? <DashboardSideBar /> : <MobileDashboardSideBar/>}
-                {this.state.width > 720 ? <DashboardSkills /> : <MobileDashboardSkills/>}
+            <div className='dashboard-page__background'>
+                <div className="dashboard-page content-container">
+                    {this.state.width > 720 ? <DashboardSideBar /> : <MobileDashboardSideBar/>}
+                    {this.state.width > 720 ? <DashboardSkills /> : <MobileDashboardSkills/>}
+                </div>
             </div>
         )
     }
