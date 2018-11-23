@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import database from '../firebase/firebase';
 import { firebase, storage } from '../firebase/firebase';
 
@@ -162,7 +161,8 @@ export const startSetDogs = () => {
                 });
             });
 
-            dogs.length > 0 && (dogs[0].isActive = true) ;
+            // Checks to see if any dogs exist. If so, the first one is set to be the activeDog.
+            dogs.length > 0 && (dogs[0].isActive = true);
 
             dispatch(setDogs(dogs));
         });

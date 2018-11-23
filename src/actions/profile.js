@@ -1,12 +1,11 @@
 import database from '../firebase/firebase';
-import { firebase, storage } from '../firebase/firebase';
+import { storage } from '../firebase/firebase';
 import { startLogout } from './auth';
 
 // REMOVE_PROFILE
 export const startRemoveProfile = () => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        const currentPicture = getState().profileInfo.profilePictureName;
         return database.ref(`users/${uid}`).remove().then(() => {
             dispatch(startLogout());
         }).then(() => {
@@ -35,6 +34,7 @@ export const startUpdateProfile = (profileInfo) => {
     };
 };
 
+
 // UPDATE_THEME
 export const updateTheme = (theme = 'default') => ({
     type: "UPDATE_THEME",
@@ -49,6 +49,7 @@ export const startUpdateTheme = (newTheme) => {
         });
     };
 };
+
 
 // SET_PROFILE
 export const setProfile = (profileInfo) => ({

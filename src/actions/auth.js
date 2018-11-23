@@ -1,5 +1,6 @@
 import { firebase } from '../firebase/firebase';
 
+// LOGIN
 export const login = (uid) => ({
     type: "LOGIN",
     uid
@@ -10,6 +11,7 @@ export const startLoginWithEmail = (email, password) => {
     };
 };
 
+// LOGOUT
 export const logout = () => ({
     type: "LOGOUT"
 })
@@ -19,6 +21,8 @@ export const startLogout = () => {
     };
 };
 
+
+// SIGNUP
 export const signup = () => ({
     type: "SIGNUP"
 });
