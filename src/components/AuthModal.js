@@ -30,6 +30,8 @@ class AuthModal extends React.Component {
     signupWithEmail = () => {
         if (this.state.email && this.state.password) {
             this.props.startSignUp(this.state.email, this.state.password);
+        } else {
+            this.setState(() => ({ error: true }))
         }
     }
     render() {

@@ -14,6 +14,8 @@ module.exports = (env) => {
     const isProduction = env === 'production';
     const CSSExtract = new ExtractTextPlugin('styles.css');
 
+    console.log(process.env.FIREBASE_API_KEY);
+
     return {
         entry: ['babel-polyfill', './src/app.js'],
         output: {

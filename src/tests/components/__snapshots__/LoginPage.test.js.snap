@@ -2,21 +2,67 @@
 
 exports[`should render login page correctly 1`] = `
 <div
-  className="login-page"
+  className="landing-page"
 >
   <div
-    className="login-page__box"
+    className="landing-page__jumbotron"
+  />
+  <div
+    className="landing-page__description"
   >
-    <h2
-      className="login-page__title"
+    <p>
+      Pup Skills is a place for you to keep track of the skills you have been working on with your dog. Record and update the progress you are having with your pups.
+    </p>
+  </div>
+  <div
+    className="landing-page__screenshot"
+  >
+    <img
+      src="/images/screenshot.png"
+    />
+  </div>
+  <div
+    className="landing-page__points"
+  >
+    <div
+      className="landing-page__point"
     >
-      Pup Skills
-    </h2>
-    <button
-      className="login-page__button"
+      <img
+        src="/images/list.png"
+      />
+      <p>
+        Separate lists to keep completed and in-progress skills organized.
+      </p>
+    </div>
+    <div
+      className="landing-page__point"
     >
-      Login with Google
-    </button>
+      <img
+        src="/images/three.png"
+      />
+      <p>
+        Keep track of up to three different dogs.
+      </p>
+    </div>
+    <div
+      className="landing-page__point"
+    >
+      <img
+        src="/images/devices.png"
+      />
+      <p>
+        Access your account on all devices with an internet connection.
+      </p>
+    </div>
+  </div>
+  <div
+    className="landing-page__join-banner"
+  >
+    <p
+      onClick={[Function]}
+    >
+      Click here to start tracking your dog's progress.
+    </p>
   </div>
 </div>
 `;

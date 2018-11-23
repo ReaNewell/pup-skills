@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import 'firebase/storage';
 
 // Initialize Firebase
 const config = {

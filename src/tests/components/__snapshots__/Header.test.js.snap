@@ -24,12 +24,14 @@ exports[`should render header correctly 1`] = `
           </span>
         </h1>
       </Link>
-      <button
-        className="header__button"
-        onClick={[Function]}
-      >
-        Logout
-      </button>
+      <div>
+        <button
+          className="header__button"
+          onClick={[Function]}
+        >
+          Sign In
+        </button>
+      </div>
     </div>
   </div>
 </header>

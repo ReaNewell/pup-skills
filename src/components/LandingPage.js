@@ -1,7 +1,7 @@
 import React from 'react';
 import AuthModal from './AuthModal';
 
-class LandingPage extends React.Component {
+export class LandingPage extends React.Component {
     constructor(props) {
         super(props);
 
