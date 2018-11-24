@@ -12,6 +12,9 @@ export class Header extends React.Component {
             loginModalIsOpen: false,
         }
     }
+    closeLoginModal = () => {
+        this.setState(() => ({ loginModalIsOpen: false }));
+    }
     openLoginModal = () => {
         this.setState(() => ({ loginModalIsOpen: true }));
     }
@@ -33,7 +36,7 @@ export class Header extends React.Component {
                     </div>
                 </div>
                 {
-                    this.state.loginModalIsOpen && <AuthModal />
+                    this.state.loginModalIsOpen && <AuthModal closeLoginModal={this.closeLoginModal}/>
                 }
             </header>
         )

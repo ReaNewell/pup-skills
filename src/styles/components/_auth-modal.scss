@@ -21,9 +21,10 @@
             '. password     password     password     password     .'
             '. error        error        error        error        .'
             '. signUp       signUp       signIn       signIn       .'
+            '. .            exit         exit         .            .'
             '. .            .            .            .            .';
         grid-template-columns: minmax(7.5%, auto) minmax(auto, 10rem) minmax(auto, 10rem) minmax(auto, 10rem) minmax(auto, 10rem) minmax(7.5%, auto);
-        grid-template-rows: 30% auto auto auto auto 30%;
+        grid-template-rows: 28% auto auto auto auto auto 28%;
         height: 100vh;
         position: fixed;
         width: 100vw;
@@ -66,6 +67,12 @@
     &__button--signIn {
         @extend .auth-modal__button;
         grid-area: signIn;
+    }
+    &__exit {
+        color: #cecece;
+        border: none;
+        grid-area: exit;
+        margin: 0 auto;
     }
     &__error {
         color: hsl(0, 65%, 75%);

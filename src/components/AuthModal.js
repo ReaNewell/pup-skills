@@ -39,6 +39,7 @@ class AuthModal extends React.Component {
             <div className="auth-modal">
                 <div className="auth-modal__box">
                     {this.state.error && <p className='auth-modal__error'>{this.state.error}</p>}
+                    <p className='auth-modal__exit' onClick={this.props.closeLoginModal}>Nevermind.</p>
                     <input 
                         className="auth-modal__email"
                         onChange={this.onEmailChange}

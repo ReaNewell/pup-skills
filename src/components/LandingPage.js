@@ -9,6 +9,9 @@ export class LandingPage extends React.Component {
             loginModalIsOpen: false
         }
     }
+    closeLoginModal = () => {
+        this.setState(() => ({ loginModalIsOpen: false }));
+    }
     openLoginModal = () => {
         this.setState(() => ({ loginModalIsOpen: true }));
         window.scrollTo(0, 0);
@@ -43,7 +46,7 @@ export class LandingPage extends React.Component {
                 <div className='landing-page__join-banner'>
                     <p onClick={this.openLoginModal}>Click here to start tracking your dog's progress.</p>
                 </div>
-                { this.state.loginModalIsOpen && <AuthModal /> }
+                { this.state.loginModalIsOpen && <AuthModal closeLoginModal={this.closeLoginModal} /> }
             </div>
         );
     }
