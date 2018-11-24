@@ -8,7 +8,7 @@ class AuthModal extends React.Component {
 
         this.state = {
             email: "",
-            error: false,
+            error: null,
             password: ""
         }
     }
@@ -24,21 +24,21 @@ class AuthModal extends React.Component {
         if (this.state.email && this.state.password) {
             this.props.startLoginWithEmail(this.state.email, this.state.password);
         } else {
-            this.setState(() => ({ error: true }))
+            this.setState(() => ({ error: "The email and/or password is invalid." }))
         }
     }
     signupWithEmail = () => {
-        if (this.state.email && this.state.password) {
+        if (this.state.email && /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(this.state.password)) {
             this.props.startSignUp(this.state.email, this.state.password);
         } else {
-            this.setState(() => ({ error: true }))
+            this.setState(() => ({ error: "The email and/or password is invalid. Password must contain eight characters, at least one number, and at least one letter." }))
         }
     }
     render() {
         return (
             <div className="auth-modal">
                 <div className="auth-modal__box">
-                    {this.state.error && <p className='auth-modal__error'>The email and/or password is invalid.</p>}
+                    {this.state.error && <p className='auth-modal__error'>{this.state.error}</p>}
                     <input 
                         className="auth-modal__email"
                         onChange={this.onEmailChange}
