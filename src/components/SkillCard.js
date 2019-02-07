@@ -33,11 +33,11 @@ export class SkillCard extends React.Component {
                 {
                     this.state.activated ? (
                         <div>
-                            <h3 className="skill-card__title" onClick={this.deactivateCard}>{this.state.name}</h3>
+                            <h3 className={this.state.description ? "skill-card__title skill-card__title--clickable" : "skill-card__title"} onClick={this.deactivateCard}>{this.state.name}</h3>
                             <p>{this.state.description}</p>
                         </div>
                     ) : (
-                        <h3 className="skill-card__title" onClick={this.activateCard}>{this.state.name}</h3>
+                        <h3 className={this.state.description ? "skill-card__title skill-card__title--clickable" : "skill-card__title"} onClick={this.activateCard}>{this.state.name}</h3>
                     )
                 }
                 <div className="skill-card__buttons">
