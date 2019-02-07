@@ -1,6 +1,6 @@
 .name-card {
     align-items: center;
-    color: white;
+    color: darken(hsl(112, 65%, 75%), 30%);
     border-bottom: 1px solid var(--secondary-color--darken-15);
     display: flex;
     justify-content: space-between;

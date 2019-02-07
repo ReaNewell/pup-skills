@@ -1,7 +1,7 @@
 .dog-card {
     align-items: center;
-    background: var(--main-color--lighten-5);
-    border-left: 2rem solid var(--main-color--lighten-15);
+    background: hsl(112, 0%, 90%);
+    border-left: 2rem solid var(--main-color);
     color: var(--secondary-color--darken-15);
     display: flex;
     font-size: 1.8rem;
@@ -14,14 +14,14 @@
     word-wrap: break-word;
 
     &__name {
-        color: var(--secondary-color--darken-15);
+        color: hsl(112, 0%, 25%);;
         font-size: 1.8rem;
-        margin-left: 5px;
+        margin-left: 10px;
         width: 75%;
     }
     &--active {
         background: var(--main-color--lighten-10);
-        border-left: 2rem solid var(--main-color--lighten-25);
+        border-left: 2rem solid hsl(112, 65%, 30%);;
         transform: scale(1.15);
         transition: 0.5s all;
     }

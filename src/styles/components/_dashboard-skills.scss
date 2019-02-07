@@ -11,12 +11,12 @@
 
 .dashboard-skills__header {
     align-items: center;
-    border-bottom: 3px solid var(--secondary-color);
+    border-bottom: 3px solid #dddddd;
     display: flex;
     margin: 0 $xs-size $m-size $xs-size;
 }
 .dashboard-skills__title {
-    color: var(--secondary-color);
+    color: #606060;
     flex: 3;
     font-size: $font-size-large;
 }
@@ -73,6 +73,10 @@
     .dashboard-skills {    
         margin: 0;
         width: 100vw;
+
+        &__button {
+            margin-bottom: $xs-size;
+        }
     }
     .dashboard-skills__list-title {
         border-radius: 1rem 1rem 0 0;
