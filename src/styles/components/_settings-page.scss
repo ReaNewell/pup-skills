@@ -1,70 +1,57 @@
 .settings-page {
     min-height: 85vh;
-}
 
-.settings-page__title {
-    margin-left: $l-size;
-}
-
-.settings-page__board {
-    background: white;
-    border: 1rem solid var(--secondary-color);
-    border-radius: 1rem;
-    font-size: 125%;
-    margin: $l-size;
-    padding: $m-size;
-}
-
-.settings-page__subtitle {
-    color: var(--secondary-color);
-}
-
-.settings-page__board__tile {
-    align-items: center;
-    // background: var(--main-color--lighten-10);
-    display: flex;
-    justify-content: space-between;
-    margin: .5rem;
-    padding: .5rem;
-}
-
-.settings-page__text-input {
-    background: white;
-    border: none;
-    border-bottom: 2px solid var(--main-color);
-
-    &:focus {
-        outline: none;
+    &__title {
+        margin: $l-size 0 0 $l-size;
     }
-}
-
-.settings-page__label {
-    align-items: center;
-    display: flex;
-    position: relative;
-}
-
-.settings-page__camera {
-    padding-left: 5px;
-    width: 30px;
-}
-
-.settings-page__button {
-    background: var(--secondary-color);
-    border: 3px solid var(--main-color--lighten-10);
-    border-radius: 1rem;
-    box-sizing: none;
-    color: white;
-    padding: $xs-size;
-}
-.settings-page__button--warning {
-    @extend .settings-page__button;
-    margin: 1rem;
-}
-
-.settings-page__button-group {
-    display: flex;
-    flex-direction: column;
+    &__board {
+        background: white;
+        border-radius: 1rem;
+        font-size: 125%;
+        margin: $l-size;
+        padding: $m-size;
+        width: 50%;
+    
+        &__tile {
+            align-items: center;
+            background: hsl(0, 0, 97%);
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $s-size;
+            padding: 1rem;
+        }
+    }
+    &__subtitle {
+        color: var(--secondary-color);
+    }
+    &__text-input {
+        background: white;
+        border: none;
+        border-bottom: 2px solid var(--main-color);
+    
+        &:focus {
+            outline: none;
+        }
+    }
+    &__button {
+        background: none;
+        border: 3px solid var(--main-color);
+        border-radius: 1rem;
+        box-sizing: none;
+        color: #303030;
+        font-size: $font-size-medium;
+        margin: 0 .5rem;
+        padding: .5rem;
+    
+        &--warning {
+            @extend .settings-page__button;
+            margin: 1rem;
+        }
+    }
+    &__button-group {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 
@@ -98,46 +85,28 @@
     margin: $m-size;
     text-align: center;
 }
-.theme-buttons {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.theme-button {
-    background: linear-gradient(45deg, hsl(112, 65%, 75%), hsl(92, 44%, 59%));
-    border: none;
-    border-radius: 1rem;
-    height: $l-size;
-    margin: 0 $xs-size;
-    width: $l-size;
-
-    &:focus {
-        outline: none;
-    }
-}
-.theme-button--blue {
-    @extend .theme-button;
-    background: linear-gradient(45deg, hsl(204, 65%, 75%), hsl(204, 44%, 59%))
-}
-.theme-button--orange {
-    @extend .theme-button;
-    background: linear-gradient(45deg, hsl(26, 65%, 75%), hsl(26, 44%, 59%))
-}
-.theme-button--pink {
-    @extend .theme-button;
-    background: linear-gradient(45deg, hsl(332, 65%, 75%), hsl(332, 44%, 59%))
-}
 
 @media (max-width: $desktop-breakpoint) {
-    .settings-page__title {
-        font-size: $font-size-medium;
-        margin: 0 0 0 $xs-size;
-    }
-    .settings-page__board {
-        border-left: none; border-right: none;
-        border-radius: 0;
-        margin: 0;
-        padding: $xs-size;
+    .settings-page {
+
+        &__title {
+            font-size: $font-size-large;
+            margin: $xs-size 0 0 $xs-size;
+        }
+        &__board {
+            border-left: none; border-right: none;
+            border-radius: 0;
+            margin: 0;
+            padding: $xs-size;
+            width: 100%;
+
+            &__tile {
+                font-size: $font-size-medium;
+            }
+        }
+        &__button {
+            font-size: $font-size-small;
+        }
     }
     .warning-modal {
         width: 90vw;
