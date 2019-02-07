@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { startRemoveDog } from '../actions/dogs';
-import { startUpdateProfile, startRemoveProfile, startUpdateTheme } from '../actions/profile';
+import { startUpdateProfile, startRemoveProfile } from '../actions/profile';
 import EditDogForm from './EditDogForm';
 
 class SettingsPage extends React.Component {
@@ -13,7 +13,6 @@ class SettingsPage extends React.Component {
             currentDog: {},
             currentDogId: "",
             profileName: props.profileName,
-            profileTheme: props.profileTheme ? prop.profileTheme : 'default',
             removeDogWarning: false,
             removeProfileWarning: false,
             editDogModal: false,
@@ -43,12 +42,6 @@ class SettingsPage extends React.Component {
         });
         this.setState(() => ({ updatingProfileName: false }));
     };
-    updateProfileTheme = (e) => {
-        e.preventDefault();
-        const profileTheme = e.target.value;
-        this.props.startUpdateTheme(profileTheme);
-        this.setState(() => ({ profileTheme }));
-    }
     openUpdateProfileName = () => {
         this.setState(() => ({ updatingProfileName: true }));
     };
@@ -106,15 +99,6 @@ class SettingsPage extends React.Component {
                                 <div className="settings-page__board__tile">
                                     <p>Profile Name: {this.state.profileName}</p>
                                     <button onClick={this.openUpdateProfileName} className="settings-page__button">Edit Profile Name</button>
-                                </div>
-                                <div className="settings-page__board__tile">
-                                    <p>Theme: {this.state.profileTheme}</p>
-                                    <div className='theme-buttons'>
-                                        <button className='theme-button' onClick={this.updateProfileTheme} value="default"></button>
-                                        <button className='theme-button--blue' onClick={this.updateProfileTheme} value="blue"></button>
-                                        <button className='theme-button--orange' onClick={this.updateProfileTheme} value="orange"></button>
-                                        <button className='theme-button--pink' onClick={this.updateProfileTheme} value="pink"></button>
-                                    </div>
                                 </div>
                             </div>
                         ) 
@@ -223,8 +207,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     startRemoveDog: (data) => dispatch(startRemoveDog(data)),
     startRemoveProfile: () => dispatch(startRemoveProfile()),
-    startUpdateProfile: (data) => dispatch(startUpdateProfile(data)),
-    startUpdateTheme: (data) => dispatch(startUpdateTheme(data))
+    startUpdateProfile: (data) => dispatch(startUpdateProfile(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsPage);
