@@ -19,12 +19,8 @@
 
 @media (max-width: $desktop-breakpoint) {
     .skills-list {
-        border: .5rem solid var(--main-color);
         margin: 0 0 $xs-size 0;
-
-        &--inprogress {
-            border: 0.5rem solid var(--secondary-color--lighten-10);
-        }
+        padding: 1rem;
     }
     
 }

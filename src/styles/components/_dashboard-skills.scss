@@ -79,15 +79,18 @@
 
         &__button {
             margin-bottom: $xs-size;
+            width: 100%;
         }
     }
     .dashboard-skills__list-title {
+        background: rgba(255, 255, 255, 0.95);
         border-radius: 1rem 1rem 0 0;
         margin-right: .25rem;
         padding: .5rem 0 0 0;
         width: 50%;
     }
-    .dashboard-skills__list-title--inprogress {    
+    .dashboard-skills__list-title--inprogress {
+        background: rgba(255, 255, 255, 0.95);   
         border-radius: 1rem 1rem 0 0;
         margin-left: 0.25rem;
         padding: .5rem 0 0 0;
