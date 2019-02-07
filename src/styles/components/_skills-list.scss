@@ -1,12 +1,11 @@
 .skills-list {
-    background: white;
-    border: 1rem solid var(--main-color);
+    background: rgba(255, 255, 255, 0.95);
     margin: 0 $xs-size $xs-size $xs-size;
+    padding: 1rem 1rem 2rem 1rem;
     width: 100%;
 
     &--inprogress {
         @extend .skills-list;
-        border: 1rem solid var(--secondary-color--lighten-10);
     }
     &--inactive {
         display: none;

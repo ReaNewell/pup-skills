@@ -15,17 +15,28 @@ $light-color: rgba(255, 255, 255, 0.946);
 // $pink: hsl(322, 64%, 75%);
 // $dark-pink: hsl(332, 44%, 59%);
 
+// --main-color: hsl(112, 65%, 75%);
+//     --main-color--lighten-5: hsl(112, 65%, 80%);
+//     --main-color--lighten-10: hsl(112, 65%, 85%);
+//     --main-color--lighten-15: hsl(112, 65%, 90%);
+//     --main-color--lighten-20: hsl(112, 65%, 95%);
+//     --main-color--lighten-25: hsl(112, 65%, 100%);
+//     --secondary-color: hsl(112, 44%, 59%);
+//     --secondary-color--lighten-10: hsl(112, 44%, 69%);
+//     --secondary-color--lighten-15: hsl(112, 44%, 74%);
+//     --secondary-color--darken-15: hsl(112, 44%, 44%);
+
 :root {
-    --main-color: hsl(112, 65%, 75%);
-    --main-color--lighten-5: hsl(112, 65%, 80%);
-    --main-color--lighten-10: hsl(112, 65%, 85%);
-    --main-color--lighten-15: hsl(112, 65%, 90%);
-    --main-color--lighten-20: hsl(112, 65%, 95%);
-    --main-color--lighten-25: hsl(112, 65%, 100%);
-    --secondary-color: hsl(112, 44%, 59%);
-    --secondary-color--lighten-10: hsl(112, 44%, 69%);
-    --secondary-color--lighten-15: hsl(112, 44%, 74%);
-    --secondary-color--darken-15: hsl(112, 44%, 44%);
+    --main-color: hsl(112, 0%, 75%);
+    --main-color--lighten-5: hsl(112, 0%, 80%);
+    --main-color--lighten-10: hsl(112, 0%, 85%);
+    --main-color--lighten-15: hsl(112, 0%, 90%);
+    --main-color--lighten-20: hsl(112, 0%, 95%);
+    --main-color--lighten-25: hsl(112, 0%, 100%);
+    --secondary-color: hsl(112, 0%, 59%);
+    --secondary-color--lighten-10: hsl(112, 0%, 69%);
+    --secondary-color--lighten-15: hsl(112, 0%, 74%);
+    --secondary-color--darken-15: hsl(112, 0%, 44%);
 }
 
 

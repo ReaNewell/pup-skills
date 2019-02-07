@@ -1,5 +1,5 @@
 .header {
-    background: var(--secondary-color);
+    background: hsl(112, 50%, 60%);
 
     &__content {
         align-items: center;
@@ -8,14 +8,14 @@
         padding: $m-size;
     }
     &__title {
-        color: var(--main-color--lighten-20);
+        color: white;
         font-size: $font-size-xlarge;
         font-weight: 600;
         margin: 0;
         text-decoration: none;
     
         span {
-            color: var(--main-color--lighten-10);
+            color: white;
         }
     }
     &__link {
@@ -25,12 +25,13 @@
         text-decoration: none;
     }
     &__button {
-        background: var(--main-color--lighten-15);
+        background: none;
         border: none;
-        color: var(--secondary-color--darken-15);
+        color: white;
         font-size: $font-size-medium;
         height: 4rem;
         padding: .3rem 1rem;
+        text-decoration: underline;
     
         &:focus {
             outline: none;

@@ -1,13 +1,14 @@
 .skill-card {
     align-items: center;
-    background: #FFFFFF55;
-    border-bottom: 1px solid #CCCCCC;
+    background: hsla(113, 60%, 80%, 0.333);
+    // border-bottom: 1px solid #CCCCCC;
     display: flex;
     justify-content: space-between;
-    margin: 0 $xs-size 0 $xs-size;
-    padding: .3rem;
+    margin: 0 $xs-size $xs-size $xs-size;
+    padding: .5rem;
 
     &:last-child {
+        margin: 0 $xs-size 0 $xs-size;
         border: none;
     }
 }
@@ -22,15 +23,13 @@
 }
 
 .skill-card__button {
-    background: white;
+    background: none;
     border: none;
-    color: var(--secondary-color);
+    color: #909090;
     padding: .5rem;
  }
 .skill-card__button--inprogress {
     @extend .skill-card__button;
-
-    color: var(--secondary-color);
 }
 
 .skill-fade-enter {

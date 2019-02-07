@@ -3,6 +3,7 @@
     color: darken(hsl(112, 65%, 75%), 30%);
     border-bottom: 1px solid var(--secondary-color--darken-15);
     display: flex;
+    font-size: $font-size-small;
     justify-content: space-between;
     margin: $s-size;
     padding: $xs-size;
