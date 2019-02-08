@@ -27,7 +27,7 @@ export class LandingPage extends React.Component {
                     </p>
                 </div>
                 <div className='landing-page__screenshot'>
-                    <img src='/images/screenshot.png'/>
+                    <img src='/images/screenshot.jpg'/>
                 </div>
                 <div className='landing-page__points'>
                     <div className='landing-page__point'>
