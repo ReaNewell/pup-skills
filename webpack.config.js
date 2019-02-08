@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const compression = require('compression');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -55,7 +56,10 @@ module.exports = (env) => {
                 'process.env.FIREBASE_DATABASE_URL': JSON.stringify(process.env.FIREBASE_DATABASE_URL),
                 'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
                 'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
-                'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
+                'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID),
+                'process.env': {
+                    'NODE_ENV': JSON.stringify('production')
+                  }
             }),
             new CompressionPlugin({
                 filename: "[path].gz[query]",
@@ -63,7 +67,8 @@ module.exports = (env) => {
                 test: /\.js$|\.css$|\.html$/,
                 threshold: 10240,
                 minRatio: 0.8
-            })
+            }),
+            new UglifyJsPlugin()
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
