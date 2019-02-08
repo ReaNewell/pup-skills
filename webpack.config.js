@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const compression = require('compression');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -13,8 +15,6 @@ if (process.env.NODE_ENV === 'test') {
 module.exports = (env) => {
     const isProduction = env === 'production';
     const CSSExtract = new ExtractTextPlugin('styles.css');
-
-    console.log(process.env.FIREBASE_API_KEY);
 
     return {
         entry: ['babel-polyfill', './src/app.js'],
@@ -56,13 +56,25 @@ module.exports = (env) => {
                 'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
                 'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
                 'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
+            }),
+            new CompressionPlugin({
+                filename: "[path].gz[query]",
+                algorithm: "gzip",
+                test: /\.js$|\.css$|\.html$/,
+                threshold: 10240,
+                minRatio: 0.8
             })
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true,
-            publicPath: '/dist/'
-        }
+            publicPath: '/dist/',
+            compress: true,
+            before(app) {
+                app.use(compression({}));
+            }
+        },
+        mode: isProduction ? 'production' : 'development'
     };
 };
