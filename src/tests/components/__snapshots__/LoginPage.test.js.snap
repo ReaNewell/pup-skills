@@ -18,7 +18,7 @@ exports[`should render login page correctly 1`] = `
     className="landing-page__screenshot"
   >
     <img
-      src="/images/screenshot.png"
+      src="/images/screenshot.jpg"
     />
   </div>
   <div

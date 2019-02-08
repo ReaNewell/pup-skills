@@ -13,6 +13,7 @@ html {
 }
 
 body {
+    background: #73cc65;
     color: #262626;
     font-size: $m-size;
     line-height: 1.6;
@@ -38,6 +39,6 @@ button:disabled {
 
 @media (max-width: $desktop-breakpoint) {
     body {
-        background: #FFF;
+        background: #73cc65;
     }
 }
