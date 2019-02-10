@@ -7,7 +7,9 @@ export const login = (uid) => ({
 });
 export const startLoginWithEmail = (email, password) => {
     return () => {
-        return firebase.auth().signInWithEmailAndPassword(email, password);
+        return firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
+            return error.message;
+        })
     };
 };
 
