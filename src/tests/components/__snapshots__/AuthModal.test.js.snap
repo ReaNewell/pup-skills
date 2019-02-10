@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the AuthModal component correctly 1`] = `
+<div
+  className="auth-modal"
+>
+  <div
+    className="auth-modal__box"
+  >
+    <p
+      className="auth-modal__exit"
+    >
+      Nevermind.
+    </p>
+    <input
+      className="auth-modal__email"
+      onChange={[Function]}
+      placeholder="Email"
+      required={true}
+      type="email"
+      value=""
+    />
+    <input
+      className="auth-modal__password"
+      onChange={[Function]}
+      placeholder="Password"
+      required={true}
+      type="password"
+      value=""
+    />
+    <button
+      className="auth-modal__button--signUp"
+      onClick={[Function]}
+    >
+      Sign Up
+    </button>
+    <button
+      className="auth-modal__button--signIn"
+      onClick={[Function]}
+    >
+      Login
+    </button>
+  </div>
+</div>
+`;

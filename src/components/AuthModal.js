@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startLogin, startLoginWithEmail, startSignUp } from '../actions/auth';
+import { startLoginWithEmail, startSignUp } from '../actions/auth';
 
-class AuthModal extends React.Component {
+export class AuthModal extends React.Component {
     constructor(props) {
         super(props);
 
@@ -46,6 +46,7 @@ class AuthModal extends React.Component {
                         placeholder='Email'
                         type='email'
                         value={this.state.email}
+                        required
                     />
                     <input 
                         className="auth-modal__password"
@@ -53,6 +54,7 @@ class AuthModal extends React.Component {
                         placeholder='Password'
                         type='password'
                         value={this.state.password}
+                        required
                     />
                     <button onClick={this.signupWithEmail} className="auth-modal__button--signUp">Sign Up</button>
                     <button onClick={this.loginWithEmail} className="auth-modal__button--signIn">Login</button>
@@ -67,7 +69,6 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    startLogin: () => dispatch(startLogin()),
     startSignUp: (email, password) => dispatch(startSignUp(email, password)),
     startLoginWithEmail: (email, password) => dispatch(startLoginWithEmail(email, password))
 });
