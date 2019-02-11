@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DogCard component correctly 1`] = `
+<div
+  className="dog-card dog-card--active"
+  onClick={[Function]}
+>
+  <p
+    className="dog-card__name"
+  >
+    Pheobe
+  </p>
+</div>
+`;

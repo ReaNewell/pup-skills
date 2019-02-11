@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import selectSkills from '../selectors/skillsByCategory';
 import { activateDog } from '../actions/dogs';
 
 export class DogCard extends React.Component {
@@ -10,12 +9,8 @@ export class DogCard extends React.Component {
         this.state = {
             id: props.dog.id,
             name: props.dog.name,
-            picture: props.dog.pupPicture,
-            skills: selectSkills(props.dog.skills, "Completed").length
+            picture: props.dog.pupPicture
         }
-    };
-    componentWillReceiveProps(nextProps) {
-        this.setState({ skills: selectSkills(nextProps.dog.skills, "Completed").length });  
     };
     // Deactivates all dogs, activates Dog Card that is clicked.
     activateDog = () => {
