@@ -23,7 +23,9 @@ export class AuthModal extends React.Component {
     loginWithEmail = () => {
         if (this.state.email && this.state.password) {
             this.props.startLoginWithEmail(this.state.email, this.state.password).then((error) => {
-                this.setState(() => ({ error: error }));
+                if (error) {
+                    this.setState(() => ({ error: error }));
+                }
             });
         } else {
             this.setState(() => ({ error: "The email and/or password is invalid." }))

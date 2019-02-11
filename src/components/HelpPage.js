@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class HelpPage extends React.Component {
+export class HelpPage extends React.Component {
     render() {
         return (
             <div className='content-container'>

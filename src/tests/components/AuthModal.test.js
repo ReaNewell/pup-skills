@@ -38,7 +38,7 @@ test('should only call startSignUp if password is more than 8 characters and inc
 
 //STARTLOGINWITHEMAIL TESTS
 test('should call startLoginWithEmail when login button is clicked and email/password are provided', () => {
-    const startLoginWithEmail = jest.fn();
+    const startLoginWithEmail = jest.fn(() => Promise.resolve());
     const wrapper = shallow(<AuthModal startLoginWithEmail={startLoginWithEmail} />);
     wrapper.setState({
         email: 'example@mail.com',
