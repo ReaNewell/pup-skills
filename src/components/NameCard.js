@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import activeDogSelector from '../selectors/activeDog';
 
-class NameCard extends React.Component {
+export class NameCard extends React.Component {
     constructor(props) {
         super(props);
 
