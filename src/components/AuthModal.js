@@ -12,6 +12,15 @@ export class AuthModal extends React.Component {
             password: ""
         }
     }
+    setCookie = (name, value, days) => {
+        let expires = "";
+        if (days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
     onEmailChange = (e) => {
         const email = e.target.value;
         this.setState(() => ({ email }));
@@ -25,8 +34,12 @@ export class AuthModal extends React.Component {
             this.props.startLoginWithEmail(this.state.email, this.state.password).then((error) => {
                 if (error) {
                     this.setState(() => ({ error: error }));
+                    console.log(error);
+                    this.setCookie("email", this.state.email, 7);
+                    this.setCookie("password", this.state.password, 7);
+                    console.log(document.cookie);
                 }
-            });
+            });   
         } else {
             this.setState(() => ({ error: "The email and/or password is invalid." }))
         }
@@ -42,7 +55,7 @@ export class AuthModal extends React.Component {
         return (
             <div className="auth-modal">
                 <div className="auth-modal__box">
-                    {this.state.error && <p className='auth-modal__error'>{this.state.error}</p>}
+                    {(this.state.error && typeof this.state.error === "string")&& <p className='auth-modal__error'>{this.state.error}</p>}
                     <p className='auth-modal__exit' onClick={this.props.closeLoginModal}>Nevermind.</p>
                     <input 
                         className="auth-modal__email"

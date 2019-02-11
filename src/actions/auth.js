@@ -8,7 +8,11 @@ export const login = (uid) => ({
 export const startLoginWithEmail = (email, password) => {
     return () => {
         return firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
-            return error.message;
+            if (error) {
+                return error.message;
+            } else {
+                return "Good to go!"
+            }
         })
     };
 };
