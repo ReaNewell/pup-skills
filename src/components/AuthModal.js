@@ -12,15 +12,6 @@ export class AuthModal extends React.Component {
             password: ""
         }
     }
-    setCookie = (name, value, days) => {
-        let expires = "";
-        if (days) {
-            let date = new Date();
-            date.setTime(date.getTime() + (days*24*60*60*1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    }
     onEmailChange = (e) => {
         const email = e.target.value;
         this.setState(() => ({ email }));
@@ -34,10 +25,6 @@ export class AuthModal extends React.Component {
             this.props.startLoginWithEmail(this.state.email, this.state.password).then((error) => {
                 if (error) {
                     this.setState(() => ({ error: error }));
-                    console.log(error);
-                    this.setCookie("email", this.state.email, 7);
-                    this.setCookie("password", this.state.password, 7);
-                    console.log(document.cookie);
                 }
             });   
         } else {

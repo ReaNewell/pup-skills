@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const compression = require('compression');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -67,9 +67,8 @@ module.exports = (env) => {
                 test: /\.js$|\.css$|\.html$/,
                 threshold: 10240,
                 minRatio: 0.8
-            })
-            // ,
-            // new UglifyJsPlugin({})
+            }),
+            new UglifyJsPlugin({})
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {

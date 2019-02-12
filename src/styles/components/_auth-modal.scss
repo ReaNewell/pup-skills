@@ -22,6 +22,7 @@
             '. error        error        error        error        .'
             '. signUp       signUp       signIn       signIn       .'
             '. .            exit         exit         .            .'
+            '. .            check        check        .            .'
             '. .            .            .            .            .';
         grid-template-columns: minmax(7.5%, auto) minmax(auto, 10rem) minmax(auto, 10rem) minmax(auto, 10rem) minmax(auto, 10rem) minmax(7.5%, auto);
         grid-template-rows: 28% auto auto auto auto auto 28%;
@@ -67,6 +68,16 @@
     &__button--signIn {
         @extend .auth-modal__button;
         grid-area: signIn;
+    }
+    &__checkbox {
+        border: 2px solid black;
+        grid-area: check;
+        height: 20px;
+        width: 20px;
+
+        &:checked {
+            background: var(--main-color);
+        }
     }
     &__exit {
         color: #cecece;
