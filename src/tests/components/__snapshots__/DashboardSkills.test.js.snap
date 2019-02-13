@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DashboardSkills component correctly 1`] = `
+<div
+  className="dashboard-skills"
+>
+  <div
+    className="dashboard-skills__container"
+  >
+    <div
+      className="dashboard-skills__header"
+    >
+      <h1
+        className="dashboard-skills__title"
+      >
+        Here are 
+        Pheobe
+        's skills
+      </h1>
+      <button
+        className="dashboard-skills__button"
+        onClick={[Function]}
+      >
+        Add Skill
+      </button>
+    </div>
+    <div
+      className="dashboard-skills__lists"
+    >
+      <CompletedSkillsList
+        activeDog={
+          Object {
+            "breed": "Shiba Inu",
+            "id": "1",
+            "isActive": true,
+            "name": "Pheobe",
+            "skills": Array [
+              Object {
+                "category": "In Progress",
+                "dogId": "1",
+                "id": "1a",
+                "name": "Sit",
+              },
+              Object {
+                "category": "Completed",
+                "dogId": "1",
+                "id": "2a",
+                "name": "Stay",
+              },
+            ],
+          }
+        }
+        listIsActive={true}
+      />
+      <InProgressSkillsList
+        activeDog={
+          Object {
+            "breed": "Shiba Inu",
+            "id": "1",
+            "isActive": true,
+            "name": "Pheobe",
+            "skills": Array [
+              Object {
+                "category": "In Progress",
+                "dogId": "1",
+                "id": "1a",
+                "name": "Sit",
+              },
+              Object {
+                "category": "Completed",
+                "dogId": "1",
+                "id": "2a",
+                "name": "Stay",
+              },
+            ],
+          }
+        }
+        listIsActive={true}
+      />
+    </div>
+  </div>
+</div>
+`;

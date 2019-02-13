@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CompletedSkillsList component correctly when completed skills exist 1`] = `
+<div
+  className="skills-list--inactive"
+>
+  <p
+    className="dashboard-skills__list-title"
+  >
+    Completed
+  </p>
+  <Connect(SkillCard)
+    key="2a"
+    skill={
+      Object {
+        "category": "Completed",
+        "dogId": "1",
+        "id": "2a",
+        "name": "Stay",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`should render CompletedSkillsList component correctly when no completed skills exist 1`] = `
+<div
+  className="skills-list--inactive"
+>
+  <p
+    className="dashboard-skills__list-title"
+  >
+    Completed
+  </p>
+  <p
+    className="skills-list__message"
+  >
+    There are no completed skills.
+  </p>
+</div>
+`;

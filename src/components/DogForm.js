@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startAddDog } from '../actions/dogs';
 
-class DogForm extends React.Component {
+export class DogForm extends React.Component {
     constructor(props) {
         super(props);
 
@@ -30,11 +30,12 @@ class DogForm extends React.Component {
     // Adds dog object to dogs array in Firebase, then closes the modal form.
     onSubmit = (e) => {
         e.preventDefault();
-        const selectedFile = document.getElementById('file-input').files[0];
 
         if (!this.state.name) {
             this.setState(() => ({ error: "You must name your Pup." }));
         } else {
+            const selectedFile = document.getElementById('file-input').files[0];
+
             this.setState(() => ({ error: "" }));
             this.props.startAddDog({
                 name: this.state.name,

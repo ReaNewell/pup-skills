@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DogForm component correctly 1`] = `
+<form
+  className="dog-form-window"
+  onSubmit={[Function]}
+>
+  <div
+    className="dog-form"
+  >
+    <div
+      className="dog-form__exit"
+    >
+      X
+    </div>
+    <h3
+      className="dog-form__title"
+    >
+      Add your Pup
+    </h3>
+    <label
+      className="getting-started__file-upload"
+    >
+      Add Pup Picture
+      <input
+        accept=".png, .jpg, .jpeg"
+        className="getting-started__file-input"
+        id="file-input"
+        onChange={[Function]}
+        type="file"
+      />
+    </label>
+    <div
+      className="dog-form__entry"
+    >
+      <label
+        className="dog-form__label"
+      >
+        Pup's Name
+      </label>
+      <input
+        className="dog-form__text-input"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="dog-form__entry"
+    >
+      <label
+        className="dog-form__label"
+      >
+        Breed
+      </label>
+      <input
+        className="dog-form__text-input"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      className="dog-form__button"
+    >
+      Add Dog
+    </button>
+  </div>
+</form>
+`;
+
+exports[`should render error for invalid form submission 1`] = `
+<form
+  className="dog-form-window"
+  onSubmit={[Function]}
+>
+  <div
+    className="dog-form"
+  >
+    <div
+      className="dog-form__exit"
+    >
+      X
+    </div>
+    <h3
+      className="dog-form__title"
+    >
+      Add your Pup
+    </h3>
+    <label
+      className="getting-started__file-upload"
+    >
+      Add Pup Picture
+      <input
+        accept=".png, .jpg, .jpeg"
+        className="getting-started__file-input"
+        id="file-input"
+        onChange={[Function]}
+        type="file"
+      />
+    </label>
+    <div
+      className="dog-form__entry"
+    >
+      <label
+        className="dog-form__label"
+      >
+        Pup's Name
+      </label>
+      <input
+        className="dog-form__text-input"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="dog-form__entry"
+    >
+      <label
+        className="dog-form__label"
+      >
+        Breed
+      </label>
+      <input
+        className="dog-form__text-input"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <p>
+      You must name your Pup.
+    </p>
+    <button
+      className="dog-form__button"
+    >
+      Add Dog
+    </button>
+  </div>
+</form>
+`;

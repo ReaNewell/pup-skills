@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DashboardSideBar component correctly 1`] = `
+<div
+  className="dashboard-sidebar__container"
+>
+  <div
+    className="dashboard-sidebar"
+  >
+    <Connect(NameCard) />
+    <Connect(DogList) />
+  </div>
+</div>
+`;

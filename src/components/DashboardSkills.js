@@ -2,12 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import activeDogSelector from '../selectors/activeDog';
 
-import CompletedSkillsList from './CompletedSkillsList';
+import { CompletedSkillsList } from './CompletedSkillsList';
 import InProgressSkillsList from './InProgressSkillsList';
-import SkillCard from './SkillCard';
 import SkillsForm from './SkillsForm';
 
-class DashboardSkills extends React.Component {
+export class DashboardSkills extends React.Component {
     constructor(props) {
         super(props)
 

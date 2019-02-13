@@ -20,7 +20,6 @@ const jsx = (
     </Provider>
 );
 
-console.log(getCookie("email"));
 let hasRendered = false;
 const renderApp = () => {
     if (!hasRendered) {

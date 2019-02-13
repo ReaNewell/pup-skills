@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DashboardPage component correctly when user info is detected 1`] = `
+<div
+  className="dashboard-page__background"
+>
+  <div
+    className="dashboard-page content-container"
+  >
+    <DashboardSideBar />
+    <Connect(DashboardSkills) />
+  </div>
+</div>
+`;

@@ -4,7 +4,7 @@ import selectSkills from '../selectors/skillsByCategory';
 
 import SkillCard from './SkillCard';
 
-export default class CompletedSkillsList extends React.Component {
+export class CompletedSkillsList extends React.Component {
     constructor(props) {
         super(props)
 

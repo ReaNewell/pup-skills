@@ -6,7 +6,7 @@ import DashboardSideBar from './DashboardSideBar';
 import MobileDashboardSideBar from './mobile/MobileDashboardSideBar';
 import MobileDashboardSkills from './mobile/MobileDashboardSkills';
 
-class DashboardPage extends React.Component {
+export class DashboardPage extends React.Component {
     constructor(props) {
         super(props);
 

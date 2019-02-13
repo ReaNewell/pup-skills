@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DogList component correctly 1`] = `
+<div
+  className="dog-list"
+>
+  <Connect(DogCard)
+    dog={
+      Object {
+        "breed": "Shiba Inu",
+        "id": "1",
+        "isActive": true,
+        "name": "Pheobe",
+        "skills": Array [
+          Object {
+            "category": "In Progress",
+            "dogId": "1",
+            "id": "1a",
+            "name": "Sit",
+          },
+          Object {
+            "category": "Completed",
+            "dogId": "1",
+            "id": "2a",
+            "name": "Stay",
+          },
+        ],
+      }
+    }
+    key="0"
+  />
+  <Connect(DogCard)
+    dog={
+      Object {
+        "breed": "Papillon",
+        "id": "2",
+        "isActive": false,
+        "name": "Aster",
+        "skills": Array [
+          Object {
+            "category": "Completed",
+            "dogId": "2",
+            "id": "1b",
+            "name": "Rollover",
+          },
+        ],
+      }
+    }
+    key="1"
+  />
+  <Connect(DogCard)
+    dog={
+      Object {
+        "breed": "Not Dog",
+        "id": "3",
+        "isActive": false,
+        "name": "Mario",
+        "skills": Array [],
+      }
+    }
+    key="2"
+  />
+  <div
+    className="dog-list__buttons"
+  >
+    <Link
+      replace={false}
+      to="/settings"
+    >
+      <div
+        className="dog-list__button"
+      >
+        Edit Profile
+      </div>
+    </Link>
+  </div>
+</div>
+`;

@@ -27,4 +27,10 @@ export default [{
         name: "Rollover",
         category: "Completed"
     }]
+}, {
+    id: '3',
+    name: 'Mario',
+    breed: 'Not Dog',
+    isActive: false,
+    skills: []
 }]

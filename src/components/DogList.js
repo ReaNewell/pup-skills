@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import DogCard from './DogCard';
 import DogForm from './DogForm';
 
-class DogList extends React.Component {
+export class DogList extends React.Component {
     constructor(props) {
         super(props)
 
