@@ -3,41 +3,50 @@
 
     &__jumbotron {
         align-items: center;
-        background: var(--main-color) url('/images/bk.jpg');
+        background: var(--main-color) url('/images/border-collie.jpg');
         background-position: center;
         background-size: cover;
         display: flex;
-        min-height: 65vh;
+        min-height: 100vh;
         justify-content: center;
         width: 100vw;
         z-index: -1;
     }
     &__description {
+        align-items: center;
+        display: flex;
         font-size: 1.8rem;
+        justify-content: center;
+        min-height: 80vh;
+        opacity: 0;
         padding: $l-size;
         text-align: center;
         width: 100vw;
         
         p {
-            margin: 0 auto;
             width: 60%;
         }
     }
     &__screenshot {
-        background: var(--main-color);
+        background: hsl(112, 0%, 90%);
+        margin: $l-size auto;
         padding: $m-size;
 
         img {
+            box-shadow: 0px 5px 15px rgb(150, 150, 150);
             display: block;
             margin: auto;
-            height: 50rem;
+            padding: none;
+            transform: scale(1.2);
+            width: 70vw;
         }
     }
     &__points {
         align-items: center;
         display: flex;
         justify-content: center;
-        margin: $l-size 0 $m-size 0;
+        min-height: 70vh;
+        margin: $xl-size 0 $m-size 0;
     }
     &__point {
         align-items: center;
@@ -52,8 +61,15 @@
         width: 20vw;
 
         img {
+            background: hsl(292, 50%, 60%);
+            box-sizing: border-box;
+            border: 1rem solid hsl(292, 50%, 60%);
+            border-radius: 50%;
+            display: block;
             height: 10rem;
             margin-bottom: $l-size;
+            padding: 2rem;
+            filter: invert(100%);
         }
     }
     &__join-banner {
@@ -89,6 +105,8 @@
     }
 }
 
+
+// MOBILE STYLYING
 @media (max-width: 55rem) {
     .landing-page {
         &__description {
@@ -99,7 +117,7 @@
         &__screenshot {
             img {
                 height: auto;
-                width: 80vw;
+                width: 70vw;
             }
         }
         &__points {

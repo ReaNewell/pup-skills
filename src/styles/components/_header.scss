@@ -1,5 +1,5 @@
 .header {
-    background: #73cc65;
+    background: #fff;
 
     &__content {
         align-items: center;
@@ -8,14 +8,14 @@
         padding: $m-size;
     }
     &__title {
-        color: white;
+        color: #73cc65;
         font-size: $font-size-xlarge;
         font-weight: 600;
         margin: 0;
         text-decoration: none;
     
         span {
-            color: white;
+            color: #73cc65;
         }
     }
     &__link {
@@ -27,7 +27,7 @@
     &__button {
         background: none;
         border: none;
-        color: white;
+        color: #73cc65;
         font-size: $font-size-medium;
         height: 4rem;
         padding: .3rem 1rem;

@@ -1,6 +1,7 @@
 .skill-card {
     align-items: center;
-    background: hsla(113, 60%, 80%, 0.333);
+    background: $light-color;
+    border-radius: 7px;
     // border-bottom: 1px solid #CCCCCC;
     display: flex;
     justify-content: space-between;

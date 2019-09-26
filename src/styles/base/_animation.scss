@@ -1,0 +1,14 @@
+@keyframes appear {
+	0% {
+		transform: translateY(2.5rem);
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.animation__appear {
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+	animation-name: appear;
+}
