@@ -17,10 +17,19 @@ export class LandingPage extends React.Component {
         window.scrollTo(0, 0);
     }
     render() {
+        window.onscroll = () => {
+            const element = document.getElementsByClassName('landing-page__description');
+            const elementTop = element[0].getBoundingClientRect().top;
+
+            if (document.body.scrollTop > elementTop || document.documentElement.scrollTop > elementTop) {
+                element[0].classList.add('animation__appear');
+            }
+        }
+
         return (
             <div className="landing-page">
                 <div className='landing-page__jumbotron'></div>
-                <div className='landing-page__description'>
+                <div id='desc' className='landing-page__description'>
                     <p>
                         Pup Skills is a place for you to keep track of the skills you have been working on with your dog. 
                         Record and update the progress you are having with your pups.

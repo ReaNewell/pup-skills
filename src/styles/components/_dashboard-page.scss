@@ -1,15 +1,11 @@
 .dashboard-page {
+    // background: linear-gradient($light-color, darken($light-color, 5%));
+    background: white;
+    border-top: 2px solid $light-gray;
     display: flex;
     max-width: 110rem;
     justify-content: center;
     min-height: 85vh;
-
-    &__background {
-        // background: rgb(231, 231, 231);
-        background-image: url('https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-        background-size: cover;
-        background-position: center;
-    }
 }
 
 @media (max-width: $desktop-breakpoint) {
